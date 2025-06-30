@@ -283,8 +283,12 @@
                       <tr>
                         <th scope="col"></th>
                         <!-- 각 blur-col 클래스 제거 시 해당 열의 blur처리 해제됩니다. -->
-                        <th scope="col" class="blur-col">2021</th>
-                        <th scope="col" class="blur-col">2022</th>
+                        <!-- modal-btn01 클릭 시 비회원 로그인 팝업 노출 -->
+                        <!-- modal-btn02 클릭 시 일반회원 pro 업그레이드 팝업 노출 -->
+                        <!-- 20250630 팝업 버튼 class 추가 -->
+                        <th scope="col" class="blur-col modal-btn01">2021</th>
+                        <th scope="col" class="blur-col modal-btn02">2022</th>
+                        <!-- //20250630 팝업 버튼 class 추가 -->
                         <th scope="col">2022</th>
                         <th scope="col">2023</th>
                         <th scope="col">2024</th>
@@ -1347,6 +1351,44 @@
       </div>
     </div>
 
+    <!-- [팝업] 비회원 및 일반회원 로그인 -->
+    <div class="layer-wrap">
+      <!-- 비회원 - 로그인 펍업 -->
+      <div class="component-modal login" data-props-dimm-click="true">
+        <div class="modal-dimm"></div>
+        <div class="modal-frame">
+          <div class="modal-container">
+            <div class="modal-content">
+              <span class="content-txt">로그인 이후 사용 가능합니다.</span>
+            </div>
+            <div class="component-btns">
+              <a href="#" type="button" class="btn btn-full btn-primary">
+                <span class="btn-txt">로그인 하기</span>
+              </a>
+            </div>
+            <button class="modal-close"></button>
+          </div>
+        </div>
+      </div>
+      <!--일반회원 - 프로 업그레이드 팝업 -->
+      <div class="component-modal pro" data-props-dimm-click="true">
+        <div class="modal-dimm"></div>
+        <div class="modal-frame">
+          <div class="modal-container">
+            <div class="modal-content">
+              <span class="content-txt">Pro 회원 전환 시 사용 가능합니다.</span>
+            </div>
+            <div class="component-btns">
+              <a href="#" type="button" class="btn btn-full btn-primary">
+                <span class="btn-txt">Pro로 업그레이드 하기</span>
+              </a>
+            </div>
+            <button class="modal-close"></button>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <!-- footer include-->
     <footer id="footer" class="footer">
       <div class="footer-inner">
@@ -1405,10 +1447,20 @@
     <!-- //footer include-->
 
   </div>
-  <div class="dimm"></div>
 
   <script>
     document.addEventListener("DOMContentLoaded", function() {
+      const modalBtn01 = document.querySelector(".modal-btn01");
+      modalBtn01.addEventListener("click", () => {
+        document.querySelector(".login").ui.open();
+      });
+
+      const modalBtn02 = document.querySelector(".modal-btn02");
+      modalBtn02.addEventListener("click", () => {
+        document.querySelector(".pro").ui.open();
+      });
+
+      // 재무지표 테이블 잠금처리
       const table = document.querySelector(".component-table table");
       const headerEl = table.querySelectorAll("thead th");
 
@@ -1485,18 +1537,18 @@
                 if (value === 2000 || value === 4500) return "";
                 return value.toLocaleString();
               },
-              color: "#999999", // 눈금 글씨 색 (원하는 경우)
+              color: "#999999",
             },
             grid: {
-              display: false, // ✅ 줄눈 제거
-              drawBorder: false, // y축 라인도 숨기고 싶으면 true
+              display: false,
+              drawBorder: false,
             },
           },
           x: {
             ticks: {
-              maxRotation: 0, // ✅ 라벨이 기울어지지 않게
-              autoSkip: true, // ✅ 라벨 자동 생략
-              maxTicksLimit: 5, // ✅ 최대 라벨 수 제한 (예: 5개 정도만)
+              maxRotation: 0,
+              autoSkip: true,
+              maxTicksLimit: 5,
               color: "#999999",
             },
             grid: {
@@ -1523,7 +1575,6 @@
 
     const ctx02 = document.getElementById("lineChart02").getContext("2d");
 
-    // 파란색 그라데이션 배경 만들기
     const gradient = ctx02.createLinearGradient(0, 0, 0, 400);
     gradient.addColorStop(0, "rgba(0, 102, 255, 0.2)");
     gradient.addColorStop(1, "rgba(0, 102, 255, 0)");
@@ -1560,18 +1611,18 @@
                 if (value === 2000 || value === 4500) return "";
                 return value.toLocaleString();
               },
-              color: "#999999", // 눈금 글씨 색 (원하는 경우)
+              color: "#999999",
             },
             grid: {
-              display: false, // ✅ 줄눈 제거
-              drawBorder: false, // y축 라인도 숨기고 싶으면 true
+              display: false,
+              drawBorder: false,
             },
           },
           x: {
             ticks: {
-              maxRotation: 0, // ✅ 라벨이 기울어지지 않게
-              autoSkip: true, // ✅ 라벨 자동 생략
-              maxTicksLimit: 5, // ✅ 최대 라벨 수 제한 (예: 5개 정도만)
+              maxRotation: 0,
+              autoSkip: true,
+              maxTicksLimit: 5,
               color: "#999999",
             },
             grid: {
@@ -1599,7 +1650,6 @@
 
     const ctx03 = document.getElementById("barChart").getContext("2d");
 
-    // Gradient 생성
     const greenGradient = ctx03.createLinearGradient(0, 0, 0, 400);
     greenGradient.addColorStop(0, "rgba(0, 200, 0, 1)");
     greenGradient.addColorStop(1, "rgba(0, 200, 0, 0)");
@@ -1617,8 +1667,8 @@
           label: "Green Data",
           data: datas03,
           backgroundColor: greenGradient,
-          barThickness: "flex", // 자동 너비
-          categoryPercentage: 0.6, // 간격 넓히기
+          barThickness: "flex",
+          categoryPercentage: 0.6,
           barPercentage: 0.8,
         },
         {
@@ -1643,32 +1693,32 @@
             suggestedMin: 2000,
             suggestedMax: 4500,
             ticks: {
-              maxRotation: 0, // ✅ 라벨이 기울어지지 않게
+              maxRotation: 0,
               stepSize: 500,
               callback: function(value) {
                 if (value === 2000 || value === 4500) return "";
                 return value.toLocaleString();
               },
-              color: "#999999", // 눈금 글씨 색 (원하는 경우)
+              color: "#999999",
             },
             grid: {
-              display: false, // ✅ 줄눈 제거
-              drawBorder: false, // y축 라인도 숨기고 싶으면 true
+              display: false,
+              drawBorder: false,
             },
           },
           x: {
             grid: {
-              display: false, // ✅ x축 줄눈도 제거
+              display: false,
               drawBorder: false,
             },
             ticks: {
-              color: "#999999", // x축 날짜 색상
+              color: "#999999",
             },
           },
         },
         plugins: {
           legend: {
-            display: false, // 필요하면 true로 변경
+            display: false,
           },
         },
       },
