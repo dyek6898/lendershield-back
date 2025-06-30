@@ -1,0 +1,324 @@
+<!doctype html>
+<html lang="ko">
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="format-detection" content="telephone=no" />
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+  <meta charset="utf-8" />
+  <title>components</title>
+  <meta name="keywords" content="@@keywords" />
+  <meta name="description" content="@@description" />
+  <meta property="og:title" content="@@og:title" />
+  <meta property="og:url" content="@@og:url" />
+  <meta property="og:image" content="@@og:image" />
+  <meta property="og:description" content="@@og:description" />
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.63.3/theme/dracula.min.css" />
+  <link href="../../assets/styles/component_guide.css" type="text/css" rel="stylesheet" />
+  <link href="../../../assets/styles/style.css" type="text/css" rel="stylesheet" />
+  <script src="../../../assets/scripts/common.ui.plugin.js"></script>
+  <script src="../../../assets/scripts/common.ui.js" data-init></script>
+  <script src="../../../assets/scripts/common.js"></script>
+
+</head>
+
+<body>
+  <div class="uid-container">
+    <header class="uid-header" id="top-contents">
+      <div class="uid-header-inner">
+        <div class="uid-header-left">
+          <div class="uid-toggle-btn">
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+          </div>
+          <a href="/guide/pages/components/component.html" class="logo-uxgroup"><strong>컴포넌트 가이드</strong></a>
+        </div>
+
+        <ul class="utillity-menu">
+          <li><a href="../../cl.html">퍼블 리스트 바로가기</a></li>
+        </ul>
+      </div>
+    </header>
+    <aside class="uid-sidebar">
+      <nav class="uid-navigation"></nav>
+    </aside>
+    <div class="uid-navigation-dimm"></div>
+
+
+    <main class="uid-main code-guide">
+      <h1 class="uid-title01">Radio</h1>
+      <p class="uid-desc">
+        라디오 버튼은 여러 옵션 중에서 단 하나의 옵션을 선택할 수 있는 입력 요소입니다.<br />
+        각 라디오 버튼은 그룹 내에서 고유한 값을 갖고 있으며, 사용자가 그룹 내에서 하나의 옵션을 선택하면 다른 옵션들은 자동으로 선택 해제됩니다.
+      </p>
+
+      <section class="uid-component">
+        <h2 class="uid-title02">기본 가이드</h2>
+        <ul class="uid-list">
+          <li>
+            Radio 컴포넌트는 input.js의 동작을 위해 반드시 <code class="uid-codeblock">component-input</code> 클래스를 사용합니다.<br />
+            이 클래스가 없다면 스크립트가 적용되지 않습니다.
+          </li>
+          <li>
+            추가적인 스타일의 Radio가 필요할 경우, <code class="uid-codeblock">component-input</code> 내부에 <code class="uid-codeblock">-inner</code> 접미사를 가진 클래스를 적용하여 스타일을 확장해야 합니다.<br />
+            예를 들어, Radio는 <code class="uid-codeblock">radio-inner</code> 클래스를 사용하여 스타일을 정의합니다.
+          </li>
+        </ul>
+      </section>
+
+      <!-- <section class="uid-component">
+          <h2 class="uid-title02">테스트된 브라우저(최신 버전 기준)</h2>
+          <div class="uid-table">
+            <table class="table-fixed">
+              <caption>테스트된 브라우저 테이블 : Chrome, Chrome(모바일), Safari, Firefox</caption>
+<thead>
+  <tr>
+    <th scope="row" class="chrome-pc">
+      <p>Chrome(버전정보)</p>
+    </th>
+    <th scope="row" class="chrome-mb">
+      <p>Chrome Mobile(버전정보)</p>
+    </th>
+    <th scope="row" class="safari">
+      <p>Safari(버전정보)</p>
+    </th>
+    <th scope="row" class="firefox">
+      <p>Firefox(버전정보)</p>
+    </th>
+  </tr>
+</thead>
+
+              <tbody>
+                <tr>
+                  <td>&check;</td>
+                  <td>&check;</td>
+                  <td>&check;</td>
+                  <td>&check;</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <section class="uid-component">
+          <h2 class="uid-title02">테스트된 스크린 리더</h2>
+          <div class="uid-table">
+            <table class="table-fixed">
+              <caption>테스트된 스크린 리더 : 센스리더, VoiceOver (iOS), TalkBack (Android), NVDA</caption>
+<thead>
+  <tr>
+    <th scope="row" class="chrome-pc">
+      <p>센스리더</p>
+    </th>
+    <th scope="row" class="chrome-mb">
+      <p>VoiceOver (iOS)</p>
+    </th>
+    <th scope="row" class="safari">
+      <p>TalkBack (Android)</p>
+    </th>
+    <th scope="row" class="firefox">
+      <p>NVDA</p>
+    </th>
+  </tr>
+</thead>
+
+              <tbody>
+                <tr>
+                  <td>none</td>
+                  <td>supported</td>
+                  <td>supported</td>
+                  <td>partial</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section> -->
+
+      <section class="uid-component">
+        <h2 class="uid-title02">협의 할 점</h2>
+        <ul class="uid-list">
+          <li>협의점을 작성합니다.</li>
+        </ul>
+      </section>
+
+      <section class="uid-component">
+        <h2 class="uid-title02">접근성 가이드</h2>
+        <ul class="uid-list">
+          <li>:focus-visible{outline: -webkit-focus-ring-color auto 1px;}</li>
+        </ul>
+      </section>
+
+      <section class="uid-component">
+        <!-- S : 작성 단위 / 추가는 article 단위로 입력  -->
+        <article>
+          <h2 class="uid-title02">Radio</h2>
+          <span class="uid-guide">
+            기본 Radio 컴포넌트입니다.<br />
+            Radio 컴포넌트는 input과 동일하게 반드시 <code class="uid-codeblock">component-input</code> 만 클래스를 사용해야 합니다.
+          </span>
+          <ul class="uid-list">
+            <li>
+              <strong>구성 요소</strong><br />
+              컴포넌트 클래스 : <code class="uid-codeblock">component-input</code><br />
+              하위 요소 클래스 : <code class="uid-codeblock">radio-inner</code>
+            </li>
+          </ul>
+          <div class="code-wrap">
+            <div class="code_preview uid-demo">
+              <iframe class="preview"></iframe>
+            </div>
+
+            <div class="code-group">
+              <div class="code_info">
+                <button class="btn_codecopy ui_btnCodeCopy" data-text-swap="✔️"></button>
+              </div>
+              <textarea class="code_content html ui_code_content" data-code="html">
+
+<!-- radio : 기본 -->
+<div class="component-input">
+  <label class="radio-inner">
+    <input type="radio" id="temp_radio_0001" name="temp_radio_0001">
+  </label>
+</div>
+<br>
+<div class="component-input">
+  <label class="radio-inner">
+    <input type="radio" id="temp_radio_0002" name="temp_radio_0001" checked>
+  </label>
+</div>
+<br>
+<div class="component-input">
+  <label class="radio-inner">
+    <input type="radio" id="temp_radio_0003" name="temp_radio_0001" disabled>
+  </label>
+</div>
+<br>
+<div class="component-input">
+  <label class="radio-inner">
+    <input type="radio" id="temp_radio_0101" name="temp_radio_0100" checked disabled>
+  </label>
+</div>
+                </textarea>
+            </div>
+            <div class="code-group">
+              <div class="code_info">
+                <button class="btn_codecopy ui_btnCodeCopy" data-text-swap="✔️"></button>
+              </div>
+              <textarea class="code_content css ui_code_content" data-code="css">
+/* css 주석 사용시 이 주석사용 부탁드립니다. */
+                </textarea>
+            </div>
+            <div class="code-group">
+              <div class="code_info">
+                <button class="btn_codecopy ui_btnCodeCopy" data-text-swap="✔️"></button>
+              </div>
+              <textarea class="code_content javascript ui_code_content" data-code="javascript"></textarea>
+            </div>
+          </div>
+        </article>
+        <article>
+          <h2 class="uid-title02">Radio + 텍스트</h2>
+          <ul class="uid-list">
+            <li>
+              <strong>구성 요소</strong><br />
+              컴포넌트 클래스 : <code class="uid-codeblock">component-input</code><br />
+              하위 요소 클래스 : <code class="uid-codeblock">radio-inner</code><br />
+              텍스트 요소 클래스 : <code class="uid-codeblock">radio-txt</code>
+            </li>
+          </ul>
+          <div class="code-wrap">
+            <div class="code_preview uid-demo">
+              <iframe class="preview"></iframe>
+            </div>
+
+            <div class="code-group">
+              <div class="code_info">
+                <button class="btn_codecopy ui_btnCodeCopy" data-text-swap="✔️"></button>
+              </div>
+              <textarea class="code_content html ui_code_content" data-code="html">
+
+ <!-- radio : input + 텍스트 -->
+<br>
+<div class="component-input">
+  <label class="radio-inner">
+    <input type="radio" id="temp_radio_0201" name="temp_radio_0200">
+    <span class="radio-item">
+      <span class="radio-txt">Radio default</span>
+    </span>
+  </label>
+</div>
+<br>
+<br>
+<div class="component-input">
+  <label class="radio-inner">
+    <input type="radio" id="temp_radio_0202" name="temp_radio_0200" checked>
+    <span class="radio-item">
+      <span class="radio-txt">Radio checked</span>
+    </span>
+  </label>
+</div>
+<br>
+<br>
+<div class="component-input">
+  <label class="radio-inner">
+    <input type="radio" id="temp_radio_0203" name="temp_radio_0200" disabled>
+    <span class="radio-item">
+      <span class="radio-txt">Radio disabled</span>
+    </span>
+  </label>
+</div>
+<br>
+<br>
+<div class="component-input">
+  <label class="radio-inner">
+    <input type="radio" id="temp_radio_0301" name="temp_radio_0300" checked disabled>
+    <span class="radio-item">
+      <span class="radio-txt">Radio checked + disabled</span>
+    </span>
+  </label>
+</div>
+<br>
+                </textarea>
+            </div>
+            <div class="code-group">
+              <div class="code_info">
+                <button class="btn_codecopy ui_btnCodeCopy" data-text-swap="✔️"></button>
+              </div>
+              <textarea class="code_content css ui_code_content" data-code="css">
+/* css 주석 사용시 이 주석사용 부탁드립니다. */
+                </textarea>
+            </div>
+            <div class="code-group">
+              <div class="code_info">
+                <button class="btn_codecopy ui_btnCodeCopy" data-text-swap="✔️"></button>
+              </div>
+              <textarea class="code_content javascript ui_code_content" data-code="javascript"></textarea>
+            </div>
+          </div>
+        </article>
+        <!-- E : 작성 단위 / 추가는 article 단위로 입력  -->
+      </section>
+    </main>
+
+    <footer class="uid-footer">
+      <!-- top btn -->
+      <a href="#top" class="btn-uid-top">
+        <span>TOP</span>
+      </a>
+      <!-- //top btn -->
+      <small class="copyright">
+        ©
+        <time class="time ui-copyright">2024</time>
+        ETRIBE UX Group, ALL RIGHTS RESERVED
+      </small>
+    </footer>
+
+  </div>
+  <script src="../../assets/scripts/component_guide.js"></script>
+  <script src="../../assets/scripts/managers/color_manager.js"></script>
+  <script></script>
+</body>
+
+</html>

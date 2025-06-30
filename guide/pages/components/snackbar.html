@@ -1,0 +1,374 @@
+<!doctype html>
+<html lang="ko">
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="format-detection" content="telephone=no" />
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+  <meta charset="utf-8" />
+  <title>components</title>
+  <meta name="keywords" content="@@keywords" />
+  <meta name="description" content="@@description" />
+  <meta property="og:title" content="@@og:title" />
+  <meta property="og:url" content="@@og:url" />
+  <meta property="og:image" content="@@og:image" />
+  <meta property="og:description" content="@@og:description" />
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.63.3/theme/dracula.min.css" />
+  <link href="../../assets/styles/component_guide.css" type="text/css" rel="stylesheet" />
+  <link href="../../../assets/styles/style.css" type="text/css" rel="stylesheet" />
+  <script src="../../../assets/scripts/common.ui.plugin.js"></script>
+  <script src="../../../assets/scripts/common.ui.js" data-init></script>
+  <script src="../../../assets/scripts/common.js"></script>
+
+</head>
+
+<body>
+  <div class="uid-container">
+    <header class="uid-header" id="top-contents">
+      <div class="uid-header-inner">
+        <div class="uid-header-left">
+          <div class="uid-toggle-btn">
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+          </div>
+          <a href="/guide/pages/components/component.html" class="logo-uxgroup"><strong>컴포넌트 가이드</strong></a>
+        </div>
+
+        <ul class="utillity-menu">
+          <li><a href="../../cl.html">퍼블 리스트 바로가기</a></li>
+        </ul>
+      </div>
+    </header>
+    <aside class="uid-sidebar">
+      <nav class="uid-navigation"></nav>
+    </aside>
+    <div class="uid-navigation-dimm"></div>
+
+
+    <main class="uid-main code-guide">
+      <h1 class="uid-title01">Snackbar</h1>
+      <p class="uid-desc">가이드 모음</p>
+
+      <section class="uid-component">
+        <h2 class="uid-title02">기본 가이드</h2>
+        <ul class="uid-list">
+          <li> 설계 단계의 특별한 UX 요청이나 개발 환경에 따른 제약으로 개발 요청 사항이 없다면 <strong>테스트 완료된 코드</strong>를 <strong>복사 붙여 넣기</strong>를 <strong>기본</strong>으로 합니다. </li>
+        </ul>
+      </section>
+
+      <section class="uid-component">
+        <h2 class="uid-title02">협의 할 점</h2>
+        <ul class="uid-list">
+          <li>가이드를 작성 합니다.</li>
+        </ul>
+      </section>
+
+      <section class="uid-component">
+        <h2 class="uid-title02">접근성 가이드</h2>
+        <ul class="uid-list">
+          <li>가이드를 작성 합니다.</li>
+        </ul>
+      </section>
+
+      <section class="uid-component">
+        <!-- S : 작성 단위 / 추가는 article 단위로 입력  -->
+        <article>
+          <h2 class="uid-title02">Snackbar</h2>
+          <div class="code-wrap">
+            <div class="custom_preview">
+              <!-- Snackbar -->
+              <button type="button" data-snackbar="snackbar1" class="btn btn-snackbar"> Show Snackbar1 </button>
+              <button type="button" data-snackbar="snackbar2" class="btn btn-snackbar"> Show Snackbar2 </button>
+              <button type="button" data-snackbar="snackbar3" class="btn btn-snackbar"> Show Snackbar3 </button>
+
+              <div class="component-snackbar">
+                <!-- 동적으로 생성된 스낵바가 여기에 추가됩니다. -->
+                <!--
+                    <div class="snackbar-container type01">
+                      <div class="snackbar-content">
+                        <p class="snackbar-txt"></p>
+                      </div>
+                    </div>
+                  -->
+              </div>
+              <!-- Snackbar -->
+            </div>
+            <div class="code-group">
+              <div class="code_info">
+                <button class="btn_codecopy ui_btnCodeCopy" data-text-swap="✔️"></button>
+              </div>
+              <textarea class="code_content html ui_code_content" data-code="html">
+<!-- Snackbar -->
+<button type="button" data-snackbar="snackbar1" class="btn- btn-snackbar"> Show Snackbar1 </button>
+<button type="button" data-snackbar="snackbar2" class="btn- btn-snackbar"> Show Snackbar2 </button>
+<button type="button" data-snackbar="snackbar3" class="btn- btn-snackbar"> Show Snackbar3 </button>
+
+<div class="component-snackbar">
+  <!-- 동적으로 생성된 스낵바가 여기에 추가됩니다. -->
+</div>
+
+
+<script>
+  // Type01
+  document.querySelectorAll(".btn-snackbar").forEach(function (button) {
+    button.addEventListener("click", function () {
+      const snackbarId = button.dataset.snackbar;
+      showSnackbar(snackbarId);
+    });
+  });
+
+  function showSnackbar(snackbarId) {
+    const container = document.querySelector(".component-snackbar");
+
+    // 스낵바 메시지 정의
+    const messages = {
+      snackbar1: "스낵바 팝업에 표시될 문장1입니다.",
+      snackbar2: "스낵바 팝업에 표시될 문장2입니다.",
+      snackbar3: "스낵바 팝업에 표시될 문장3입니다.",
+      default: "기본 문장입니다.",
+    };
+
+    // 새로운 스낵바 엘리먼트 생성
+    const newSnackbar = document.createElement("div");
+    newSnackbar.className = "snackbar-container type01";
+    const innerSnackbar = document.createElement("div");
+    innerSnackbar.className = "snackbar-content";
+    newSnackbar.appendChild(innerSnackbar);
+
+    // 스낵바 텍스트를 동적으로 설정
+    const snackbarText = document.createElement("p");
+    snackbarText.className = "snackbar-txt";
+    snackbarText.textContent = messages[snackbarId] || messages["default"];
+    innerSnackbar.appendChild(snackbarText);
+
+    // 새로운 스낵바를 컨테이너에 추가
+    container.appendChild(newSnackbar);
+
+    // 스낵바 애니메이션
+    let tl = gsap.timeline();
+    tl.to(newSnackbar, {
+      duration: 0.2,
+    })
+      .to(
+        newSnackbar,
+        {
+          duration: 0.5,
+          y: 0,
+        },
+        "<",
+      )
+      .to(newSnackbar, {
+        duration: 0.5,
+        delay: 3,
+        y: 30,
+      })
+      .to(
+        newSnackbar,
+        {
+          duration: 0.2,
+          opacity: 0.2,
+          onComplete: () => {
+            newSnackbar.remove();
+          },
+        },
+        "-=0.5",
+      );
+  }
+</script>
+<!-- Snackbar -->
+                </textarea>
+            </div>
+            <div class="code-group">
+              <div class="code_info">
+                <button class="btn_codecopy ui_btnCodeCopy" data-text-swap="✔️"></button>
+              </div>
+              <textarea class="code_content css ui_code_content" data-code="css">
+/* css 주석 사용시 이 주석사용 부탁드립니다. */
+                </textarea>
+            </div>
+            <div class="code-group">
+              <div class="code_info">
+                <button class="btn_codecopy ui_btnCodeCopy" data-text-swap="✔️"></button>
+              </div>
+              <textarea class="code_content javascript ui_code_content" data-code="javascript"> </textarea>
+            </div>
+          </div>
+        </article>
+        <!-- E : 작성 단위 / 추가는 article 단위로 입력  -->
+
+        <!-- S : 작성 단위 / 추가는 article 단위로 입력  -->
+        <article>
+          <h2 class="uid-title02">Toast</h2>
+          <div class="code-wrap">
+            <div class="custom_preview">
+              <button type="button" class="btn toast-trigger-btn type01">기본 toast</button>
+              <button type="button" class="btn toast-trigger-btn type02">닫기 버튼 toast</button>
+              <button type="button" class="btn toast-trigger-btn type03">링크 버튼 toast</button>
+              <div class="toast-wrap">
+                <!-- 동적으로 생성된 스낵바가 여기에 추가됩니다. -->
+              </div>
+            </div>
+            <div class="code-group">
+              <div class="code_info">
+                <button class="btn_codecopy ui_btnCodeCopy" data-text-swap="✔️"></button>
+              </div>
+              <textarea class="code_content html ui_code_content" data-code="html">
+<button type="button" class="btn toast-trigger-btn type01">기본 toast</button>
+<button type="button" class="btn toast-trigger-btn type02">닫기 버튼 toast</button>
+<button type="button" class="btn toast-trigger-btn type03">링크 버튼 toast</button>
+<div class="toast-wrap">
+  <!-- 동적으로 생성된 스낵바가 여기에 추가됩니다. -->
+</div>
+
+<script>
+    // toast
+  document.querySelector(".toast-trigger-btn.type01").addEventListener("click", function () {
+    etUI.dialog.toastBasic({
+      message: "confirm message",
+    });
+  });
+  document.querySelector(".toast-trigger-btn.type02").addEventListener("click", function () {
+    etUI.dialog.toastCloseBtn({
+      message: "confirm message",
+      closeText: "닫기",
+    });
+  });
+  document.querySelector(".toast-trigger-btn.type03").addEventListener("click", function () {
+    etUI.dialog.toastLinkBtn({
+      message: "confirm message",
+      link: "/",
+    });
+  });
+</script>
+                </textarea>
+            </div>
+            <div class="code-group">
+              <div class="code_info">
+                <button class="btn_codecopy ui_btnCodeCopy" data-text-swap="✔️"></button>
+              </div>
+              <textarea class="code_content css ui_code_content" data-code="css">
+/* css 주석 사용시 이 주석사용 부탁드립니다. */
+                </textarea>
+            </div>
+            <div class="code-group">
+              <div class="code_info">
+                <button class="btn_codecopy ui_btnCodeCopy" data-text-swap="✔️"></button>
+              </div>
+              <textarea class="code_content javascript ui_code_content" data-code="javascript"> </textarea>
+            </div>
+          </div>
+        </article>
+        <!-- E : 작성 단위 / 추가는 article 단위로 입력  -->
+      </section>
+    </main>
+
+    <footer class="uid-footer">
+      <!-- top btn -->
+      <a href="#top" class="btn-uid-top">
+        <span>TOP</span>
+      </a>
+      <!-- //top btn -->
+      <small class="copyright">
+        ©
+        <time class="time ui-copyright">2024</time>
+        ETRIBE UX Group, ALL RIGHTS RESERVED
+      </small>
+    </footer>
+
+  </div>
+
+  <script src="../../assets/scripts/component_guide.js"></script>
+  <script src="../../assets/scripts/managers/color_manager.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script>
+    // Type01
+    document.querySelectorAll(".btn-snackbar").forEach(function(button) {
+      button.addEventListener("click", function() {
+        const snackbarId = button.dataset.snackbar;
+        showSnackbar(snackbarId);
+      });
+    });
+
+    function showSnackbar(snackbarId) {
+      const container = document.querySelector(".component-snackbar");
+
+      // 스낵바 메시지 정의
+      const messages = {
+        snackbar1: "스낵바 팝업에 표시될 문장1입니다.",
+        snackbar2: "스낵바 팝업에 표시될 문장2입니다.",
+        snackbar3: "스낵바 팝업에 표시될 문장3입니다.",
+        snackbar4: "스낵바 팝업에 표시될 문장4입니다.",
+        snackbar5: "스낵바 팝업에 표시될 문장5입니다.",
+        default: "기본 문장입니다.",
+      };
+
+      // 새로운 스낵바 엘리먼트 생성
+      const newSnackbar = document.createElement("div");
+      newSnackbar.className = "snackbar-container type01";
+      const innerSnackbar = document.createElement("div");
+      innerSnackbar.className = "snackbar-content";
+      newSnackbar.appendChild(innerSnackbar);
+
+      // 스낵바 텍스트를 동적으로 설정
+      const snackbarText = document.createElement("p");
+      snackbarText.className = "snackbar-txt";
+      snackbarText.textContent = messages[snackbarId] || messages["default"];
+      innerSnackbar.appendChild(snackbarText);
+
+      // 새로운 스낵바를 컨테이너에 추가
+      container.appendChild(newSnackbar);
+
+      // 스낵바 애니메이션
+      let tl = gsap.timeline();
+      tl.to(newSnackbar, {
+          duration: 0.2,
+        })
+        .to(
+          newSnackbar, {
+            duration: 0.5,
+            y: 0,
+          },
+          "<",
+        )
+        .to(newSnackbar, {
+          duration: 0.5,
+          delay: 3,
+          y: 30,
+        })
+        .to(
+          newSnackbar, {
+            duration: 0.2,
+            opacity: 0.2,
+            onComplete: () => {
+              newSnackbar.remove();
+            },
+          },
+          "-=0.5",
+        );
+    }
+
+    // toast
+    document.querySelector(".toast-trigger-btn.type01").addEventListener("click", function() {
+      etUI.dialog.toastBasic({
+        message: "confirm message",
+      });
+    });
+    document.querySelector(".toast-trigger-btn.type02").addEventListener("click", function() {
+      etUI.dialog.toastCloseBtn({
+        message: "confirm message",
+        closeText: "닫기",
+      });
+    });
+    document.querySelector(".toast-trigger-btn.type03").addEventListener("click", function() {
+      etUI.dialog.toastLinkBtn({
+        message: "confirm message",
+        link: "/",
+      });
+    });
+
+  </script>
+</body>
+
+</html>

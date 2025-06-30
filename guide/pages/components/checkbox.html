@@ -1,0 +1,612 @@
+<!doctype html>
+<html lang="ko">
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="format-detection" content="telephone=no" />
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+  <meta charset="utf-8" />
+  <title>components</title>
+  <meta name="keywords" content="@@keywords" />
+  <meta name="description" content="@@description" />
+  <meta property="og:title" content="@@og:title" />
+  <meta property="og:url" content="@@og:url" />
+  <meta property="og:image" content="@@og:image" />
+  <meta property="og:description" content="@@og:description" />
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.63.3/theme/dracula.min.css" />
+  <link href="../../assets/styles/component_guide.css" type="text/css" rel="stylesheet" />
+  <link href="../../../assets/styles/style.css" type="text/css" rel="stylesheet" />
+  <script src="../../../assets/scripts/common.ui.plugin.js"></script>
+  <script src="../../../assets/scripts/common.ui.js" data-init></script>
+  <script src="../../../assets/scripts/common.js"></script>
+
+</head>
+
+<body>
+  <div class="uid-container">
+    <header class="uid-header" id="top-contents">
+      <div class="uid-header-inner">
+        <div class="uid-header-left">
+          <div class="uid-toggle-btn">
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+          </div>
+          <a href="/guide/pages/components/component.html" class="logo-uxgroup"><strong>컴포넌트 가이드</strong></a>
+        </div>
+
+        <ul class="utillity-menu">
+          <li><a href="../../cl.html">퍼블 리스트 바로가기</a></li>
+        </ul>
+      </div>
+    </header>
+    <aside class="uid-sidebar">
+      <nav class="uid-navigation"></nav>
+    </aside>
+    <div class="uid-navigation-dimm"></div>
+
+
+    <main class="uid-main code-guide">
+      <h1 class="uid-title01">Checkbox</h1>
+      <p class="uid-desc">
+        체크박스는 사용자가 선택할 수 있는 옵션을 제공하는 입력 요소입니다.<br />
+        체크박스는 선택적인 항목을 나타내므로, 사용자는 선택적으로 해당 옵션을 활성화하거나 비활성화할 수 있습니다.
+      </p>
+
+      <section class="uid-component">
+        <h2 class="uid-title02">기본 가이드</h2>
+        <ul class="uid-list">
+          <li>
+            Checkbox 컴포넌트는 input.js의 동작을 위해 반드시 <code class="uid-codeblock">component-input</code> 클래스를 사용합니다.<br />
+            이 클래스가 없다면 스크립트가 적용되지 않습니다.
+          </li>
+          <li>
+            추가적인 스타일의 Checkbox가 필요할 경우, <code class="uid-codeblock">component-input</code> 내부에 <code class="uid-codeblock">-inner</code> 접미사를 가진 클래스를 적용하여 스타일을 확장해야 합니다.<br />
+            예를 들어, Checkbox는 <code class="uid-codeblock">checkbox-inner</code>, 스위치 형태의 checkbox는 <code class="uid-codeblock">switch-inner</code> 클래스를 사용하여 스타일을 정의합니다.
+          </li>
+        </ul>
+      </section>
+
+      <!-- <section class="uid-component">
+          <h2 class="uid-title02">테스트된 브라우저(최신 버전 기준)</h2>
+          <div class="uid-table">
+            <table class="table-fixed">
+              <caption>테스트된 브라우저 테이블 : Chrome, Chrome(모바일), Safari, Firefox</caption>
+<thead>
+  <tr>
+    <th scope="row" class="chrome-pc">
+      <p>Chrome(버전정보)</p>
+    </th>
+    <th scope="row" class="chrome-mb">
+      <p>Chrome Mobile(버전정보)</p>
+    </th>
+    <th scope="row" class="safari">
+      <p>Safari(버전정보)</p>
+    </th>
+    <th scope="row" class="firefox">
+      <p>Firefox(버전정보)</p>
+    </th>
+  </tr>
+</thead>
+
+              <tbody>
+                <tr>
+                  <td>&check;</td>
+                  <td>&check;</td>
+                  <td>&check;</td>
+                  <td>&check;</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <section class="uid-component">
+          <h2 class="uid-title02">테스트된 스크린 리더</h2>
+          <div class="uid-table">
+            <table class="table-fixed">
+              <caption>테스트된 스크린 리더 : 센스리더, VoiceOver (iOS), TalkBack (Android), NVDA</caption>
+<thead>
+  <tr>
+    <th scope="row" class="chrome-pc">
+      <p>센스리더</p>
+    </th>
+    <th scope="row" class="chrome-mb">
+      <p>VoiceOver (iOS)</p>
+    </th>
+    <th scope="row" class="safari">
+      <p>TalkBack (Android)</p>
+    </th>
+    <th scope="row" class="firefox">
+      <p>NVDA</p>
+    </th>
+  </tr>
+</thead>
+
+              <tbody>
+                <tr>
+                  <td>none</td>
+                  <td>supported</td>
+                  <td>supported</td>
+                  <td>partial</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section> -->
+
+      <section class="uid-component">
+        <h2 class="uid-title02">협의 할 점</h2>
+        <ul class="uid-list">
+          <li>협의점을 작성합니다.</li>
+        </ul>
+      </section>
+
+      <section class="uid-component">
+        <h2 class="uid-title02">접근성 가이드</h2>
+        <ul class="uid-list">
+          <li>checkbox - <code class="uid-codeblock">:focus-visible{outline: -webkit-focus-ring-color auto 1px;}</code>
+          </li>
+          <li>switch - <code class="uid-codeblock">:focus-within .switch-item {outline: -webkit-focus-ring-color auto 1px;}</code>
+          </li>
+          <li>switch - <code class="uid-codeblock">aria-label="스위치 제목" 기재</code>
+          </li>
+        </ul>
+      </section>
+
+      <section class="uid-component">
+        <!-- S : 작성 단위 / 추가는 article 단위로 입력  -->
+        <article>
+          <h2 class="uid-title02">Checkbox</h2>
+          <span class="uid-guide"> 기본 Checkbox 컴포넌트입니다. </span>
+          <ul class="uid-list">
+            <li>
+              <strong>구성 요소</strong><br />
+              컴포넌트 클래스 : <code class="uid-codeblock">component-input</code><br />
+              하위 요소 클래스 : <code class="uid-codeblock">checkbox-inner</code>
+            </li>
+          </ul>
+          <div class="code-wrap">
+            <div class="code_preview uid-demo">
+              <iframe class="preview"></iframe>
+            </div>
+
+            <div class="code-group">
+              <div class="code_info">
+                <button class="btn_codecopy ui_btnCodeCopy" data-text-swap="✔️"></button>
+              </div>
+              <textarea class="code_content html ui_code_content" data-code="html">
+
+ <!-- checkbox : 기본 -->
+<div class="component-input">
+  <label class="checkbox-inner">
+    <input type="checkbox" id="temp_checkbox_0001" name="temp_checkbox_0001">
+  </label>
+</div>
+<div class="component-input">
+  <label class="checkbox-inner">
+    <input type="checkbox" id="temp_checkbox_0002" name="temp_checkbox_0001" checked>
+  </label>
+</div>
+<div class="component-input">
+  <label class="checkbox-inner">
+    <input type="checkbox" id="temp_checkbox_0003" name="temp_checkbox_0001" disabled>
+  </label>
+</div>
+<div class="component-input">
+  <label class="checkbox-inner">
+    <input type="checkbox" id="temp_checkbox_0004" name="temp_checkbox_0001" checked disabled>
+  </label>
+</div>
+
+                </textarea>
+            </div>
+            <div class="code-group">
+              <div class="code_info">
+                <button class="btn_codecopy ui_btnCodeCopy" data-text-swap="✔️"></button>
+              </div>
+              <textarea class="code_content css ui_code_content" data-code="css">
+/* css 주석 사용시 이 주석사용 부탁드립니다. */
+                </textarea>
+            </div>
+            <div class="code-group">
+              <div class="code_info">
+                <button class="btn_codecopy ui_btnCodeCopy" data-text-swap="✔️"></button>
+              </div>
+              <textarea class="code_content javascript ui_code_content" data-code="javascript"></textarea>
+            </div>
+          </div>
+        </article>
+        <!-- E : 작성 단위 / 추가는 article 단위로 입력  -->
+
+        <!-- S : 작성 단위 / 추가는 article 단위로 입력  -->
+        <article>
+          <h2 class="uid-title02">Checkbox + 텍스트</h2>
+          <ul class="uid-list">
+            <li>
+              <strong>구성 요소</strong><br />
+              컴포넌트 클래스 : <code class="uid-codeblock">component-input</code><br />
+              하위 요소 클래스 : <code class="uid-codeblock">checkbox-inner</code><br />
+              텍스트 클래스 : <code class="uid-codeblock">checkbox-txt</code>
+            </li>
+          </ul>
+          <div class="code-wrap">
+            <div class="code_preview uid-demo">
+              <iframe class="preview"></iframe>
+            </div>
+
+            <div class="code-group">
+              <div class="code_info">
+                <button class="btn_codecopy ui_btnCodeCopy" data-text-swap="✔️"></button>
+              </div>
+              <textarea class="code_content html ui_code_content" data-code="html">
+
+ <!-- checkbox : input + 텍스트 -->
+<br>
+<div class="component-input">
+  <label class="checkbox-inner">
+    <input type="checkbox" id="temp_checkbox_0101" name="temp_checkbox_0100">
+    <span class="checkbox-item">
+      <span class="checkbox-txt">Checkbox default</span>
+    </span>
+  </label>
+</div>
+<br>
+<div class="component-input">
+  <label class="checkbox-inner">
+    <input type="checkbox" id="temp_checkbox_0102" name="temp_checkbox_0100" checked>
+    <span class="checkbox-item">
+      <span class="checkbox-txt">Checkbox checked</span>
+    </span>
+  </label>
+</div>
+<br>
+<div class="component-input">
+  <label class="checkbox-inner">
+    <input type="checkbox" id="temp_checkbox_0103" name="temp_checkbox_0100" disabled>
+    <span class="checkbox-item">
+      <span class="checkbox-txt">Checkbox disabled</span>
+    </span>
+  </label>
+</div>
+<br>
+<div class="component-input">
+  <label class="checkbox-inner">
+    <input type="checkbox" id="temp_checkbox_0104" name="temp_checkbox_0100" checked disabled>
+    <span class="checkbox-item">
+      <span class="checkbox-txt">Checkbox checked + disabled</span>
+    </span>
+  </label>
+</div>
+                </textarea>
+            </div>
+            <div class="code-group">
+              <div class="code_info">
+                <button class="btn_codecopy ui_btnCodeCopy" data-text-swap="✔️"></button>
+              </div>
+              <textarea class="code_content css ui_code_content" data-code="css">
+/* css 주석 사용시 이 주석사용 부탁드립니다. */
+                </textarea>
+            </div>
+            <div class="code-group">
+              <div class="code_info">
+                <button class="btn_codecopy ui_btnCodeCopy" data-text-swap="✔️"></button>
+              </div>
+              <textarea class="code_content javascript ui_code_content" data-code="javascript"></textarea>
+            </div>
+          </div>
+        </article>
+        <!-- E : 작성 단위 / 추가는 article 단위로 입력  -->
+
+        <!-- S : 작성 단위 / 추가는 article 단위로 입력  -->
+        <article>
+          <h2 class="uid-title02">Checkbox Switch</h2>
+          <ul class="uid-list">
+            <li>
+              <strong>구성 요소</strong><br />
+              컴포넌트 클래스 : <code class="uid-codeblock">component-input</code><br />
+              하위 요소 클래스 : <code class="uid-codeblock">swich-inner</code>
+            </li>
+          </ul>
+          <div class="code-wrap">
+            <div class="code_preview uid-demo">
+              <iframe class="preview"></iframe>
+            </div>
+
+            <div class="code-group">
+              <div class="code_info">
+                <button class="btn_codecopy ui_btnCodeCopy" data-text-swap="✔️"></button>
+              </div>
+              <textarea class="code_content html ui_code_content" data-code="html">
+
+ <!-- Switch : 기본 -->
+<div class="component-input">
+  <label class="switch-inner">
+    <input type="checkbox" id="temp_switch_0001" name="temp_switch_0001" aria-label="스위치 제목">
+    <span class="switch-item">
+      <span class="switch-handle"></span>
+    </span>
+  </label>
+</div>
+<br>
+<div class="component-input">
+  <label class="switch-inner">
+    <input type="checkbox" id="temp_switch_0002" name="temp_switch_0001" aria-label="스위치 제목">
+    <span class="switch-item">
+      <span class="switch-handle"></span>
+      <div class="switch-txts" aria-hidden="true">
+        <span class="txt">ON</span>
+        <span class="txt">OFF</span>
+      </div>
+    </span>
+  </label>
+</div>
+<br>
+<div class="component-input">
+  <label class="switch-inner">
+    <span class="switch-label">스위치 제목</span>
+    <input type="checkbox" id="temp_switch_0003" name="temp_switch_0001">
+    <span class="switch-item">
+      <span class="switch-handle"></span>
+    </span>
+  </label>
+</div>
+<br>
+<!-- Switch : 속성 -->
+<div class="component-input">
+  <label class="switch-inner">
+    <span class="switch-label">checked</span>
+    <input type="checkbox" id="temp_switch_0101" name="temp_switch_0100" checked>
+    <span class="switch-item">
+      <span class="switch-handle"></span>
+    </span>
+  </label>
+</div>
+<br>
+<br>
+<div class="component-input">
+  <label class="switch-inner">
+    <span class="switch-label">disabled</span>
+    <input type="checkbox" id="temp_switch_0102" name="temp_switch_0100" disabled>
+    <span class="switch-item">
+      <span class="switch-handle"></span>
+    </span>
+  </label>
+</div>
+<br>
+<br>
+<div class="component-input">
+  <label class="switch-inner">
+    <span class="switch-label">checked + disabled</span>
+    <input type="checkbox" id="temp_switch_0103" name="temp_switch_0100" checked disabled>
+    <span class="switch-item">
+      <span class="switch-handle"></span>
+    </span>
+  </label>
+</div>
+
+                </textarea>
+            </div>
+            <div class="code-group">
+              <div class="code_info">
+                <button class="btn_codecopy ui_btnCodeCopy" data-text-swap="✔️"></button>
+              </div>
+              <textarea class="code_content css ui_code_content" data-code="css">
+/* css 주석 사용시 이 주석사용 부탁드립니다. */
+                </textarea>
+            </div>
+            <div class="code-group">
+              <div class="code_info">
+                <button class="btn_codecopy ui_btnCodeCopy" data-text-swap="✔️"></button>
+              </div>
+              <textarea class="code_content javascript ui_code_content" data-code="javascript"> </textarea>
+            </div>
+          </div>
+        </article>
+        <!-- E : 작성 단위 / 추가는 article 단위로 입력  -->
+
+        <!-- S : 작성 단위 / 추가는 article 단위로 입력  -->
+        <article>
+          <h2 class="uid-title02">Checkbox - Agreement</h2>
+          <span class="uid-guide">
+            전체 동의 컴포넌트는 <code class="uid-codeblock">component-agreement</code> 클래스를 사용합니다.<br />
+            <code class="uid-codeblock">data-props-all-check="true"</code> 속성을 적용하면 전체 동의하기 체크박스 선택 시 하위 체크박스들이 자동으로 선택됩니다.<br />
+            <code class="uid-codeblock">data-props-sub-check="true"</code> 속성을 적용하면 하위 체크박스 중 하나를 선택 시 해당 체크박스에 연관된 서브 체크박스가 선택되는 구조입니다.
+          </span>
+          <ul class="uid-list">
+            <li>
+              <strong>구성 요소</strong><br />
+              컴포넌트 클래스 : <code class="uid-codeblock">component-input</code><br />
+              하위 요소 클래스 : <code class="uid-codeblock">swich-inner</code>
+            </li>
+          </ul>
+          <div class="code-wrap">
+            <div class="code_preview uid-demo">
+              <iframe class="preview"></iframe>
+            </div>
+
+            <div class="code-group">
+              <div class="code_info">
+                <button class="btn_codecopy ui_btnCodeCopy" data-text-swap="✔️"></button>
+              </div>
+              <textarea class="code_content html ui_code_content" data-code="html">
+
+<div class="component-agreement">
+  <!-- S: 전체 동의하기 버튼 영역 -->
+  <div class="component-input" data-props-all-check="true" data-props-sub-check="true">
+    <div class="all-agree-item">
+      <div class="component-input">
+        <label class="checkbox-inner">
+          <input type="checkbox" id="temp_checkbox_0101" name="temp_checkbox_0100" />
+          <span class="checkbox-item">
+            <span class="checkbox-txt">전체 동의하기 </span>
+          </span>
+        </label>
+      </div>
+    </div>
+    <!-- E: 전체 동의하기 버튼 영역 -->
+
+    <!-- S: 동의하기 리스트 영역 -->
+    <div class="agree-area">
+      <div class="agree-item">
+        <div class="component-input">
+          <label class="checkbox-inner">
+            <input type="checkbox" id="temp_checkbox_0101" name="temp_checkbox_0100" />
+            <span class="checkbox-item">
+              <span class="checkbox-txt">
+                <span class="point-desc">[필수]</span>
+                상품약관을 첫번째로 표시
+              </span>
+            </span>
+          </label>
+          <button class="btn-arrow">
+            <span class="hide-txt">팝업 버튼</span>
+          </button>
+        </div>
+      </div>
+      <div class="agree-item">
+        <div class="component-input">
+          <label class="checkbox-inner">
+            <input type="checkbox" id="temp_checkbox_0101" name="temp_checkbox_0100" />
+            <span class="checkbox-item">
+              <span class="checkbox-txt">
+                <span class="point-desc">[필수]</span>
+                서비스 약관 동의
+              </span>
+            </span>
+          </label>
+          <button class="btn-arrow">
+            <span class="hide-txt">팝업 버튼</span>
+          </button>
+        </div>
+      </div>
+      <div class="agree-item">
+        <div class="component-input">
+          <label class="checkbox-inner">
+            <input type="checkbox" id="temp_checkbox_0101" name="temp_checkbox_0100" />
+            <span class="checkbox-item">
+              <span class="checkbox-txt">
+                <span class="point-desc">[필수]</span>
+                개인정보 수집 및 이용 동
+              </span>
+            </span>
+          </label>
+          <button class="btn-arrow">
+            <span class="hide-txt">팝업 버튼</span>
+          </button>
+        </div>
+      </div>
+      <div class="agree-item">
+        <div class="component-input">
+          <label class="checkbox-inner">
+            <input type="checkbox" id="temp_checkbox_0101" name="temp_checkbox_0100" />
+            <span class="checkbox-item">
+              <span class="checkbox-txt">
+                <span class="point-desc">[필수]</span>
+                Checkbox default
+              </span>
+            </span>
+          </label>
+          <button class="btn-arrow">
+            <span class="hide-txt">팝업 버튼</span>
+          </button>
+        </div>
+      </div>
+      <div class="agree-item sub-all-agree">
+        <!-- S: 서브 전체 동의하기 영역 -->
+        <div class="component-input">
+          <label class="checkbox-inner">
+            <input type="checkbox" id="temp_checkbox_0101" name="temp_checkbox_0100" />
+            <span class="checkbox-item">
+              <span class="checkbox-txt">[선택] 마케팅 정보 수신 동의</span>
+            </span>
+          </label>
+          <button class="btn-arrow">
+            <span class="hide-txt">팝업 버튼</span>
+          </button>
+        </div>
+        <!-- E: 서브 전체 동의하기 영역 -->
+
+        <!-- S: 서브 동의하기 리스트 영역 -->
+        <div class="sub-agree-area">
+          <div class="sub-agree-item">
+            <div class="component-input small">
+              <label class="checkbox-inner">
+                <input type="checkbox" id="temp_checkbox_0005" name="temp_checkbox_0001" />
+                <span class="checkbox-item">
+                  <span class="checkbox-txt">전화</span>
+                </span>
+              </label>
+            </div>
+          </div>
+          <div class="sub-agree-item">
+            <div class="component-input small">
+              <label class="checkbox-inner">
+                <input type="checkbox" id="temp_checkbox_0005" name="temp_checkbox_0001" />
+                <span class="checkbox-item">
+                  <span class="checkbox-txt">문자(알림톡)</span>
+                </span>
+              </label>
+            </div>
+          </div>
+          <div class="sub-agree-item">
+            <div class="component-input small">
+              <label class="checkbox-inner">
+                <input type="checkbox" id="temp_checkbox_0005" name="temp_checkbox_0001" />
+                <span class="checkbox-item">
+                  <span class="checkbox-txt">이메일</span>
+                </span>
+              </label>
+            </div>
+          </div>
+        </div>
+        <!-- E: 서브 동의하기 리스트 영역 -->
+      </div>
+    </div>
+    <!-- E: 동의하기 리스트 영역 -->
+  </div>
+</div>
+
+                </textarea>
+            </div>
+            <div class="code-group">
+              <div class="code_info">
+                <button class="btn_codecopy ui_btnCodeCopy" data-text-swap="✔️"></button>
+              </div>
+              <textarea class="code_content css ui_code_content" data-code="css">
+/* css 주석 사용시 이 주석사용 부탁드립니다. */
+                </textarea>
+            </div>
+            <div class="code-group">
+              <div class="code_info">
+                <button class="btn_codecopy ui_btnCodeCopy" data-text-swap="✔️"></button>
+              </div>
+              <textarea class="code_content javascript ui_code_content" data-code="javascript"></textarea>
+            </div>
+          </div>
+        </article>
+        <!-- E : 작성 단위 / 추가는 article 단위로 입력  -->
+      </section>
+    </main>
+
+    <footer class="uid-footer">
+      <!-- top btn -->
+      <a href="#top" class="btn-uid-top">
+        <span>TOP</span>
+      </a>
+      <!-- //top btn -->
+      <small class="copyright">
+        ©
+        <time class="time ui-copyright">2024</time>
+        ETRIBE UX Group, ALL RIGHTS RESERVED
+      </small>
+    </footer>
+
+  </div>
+  <script src="../../assets/scripts/component_guide.js"></script>
+  <script src="../../assets/scripts/managers/color_manager.js"></script>
+  <script></script>
+</body>
+
+</html>

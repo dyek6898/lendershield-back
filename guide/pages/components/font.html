@@ -1,0 +1,402 @@
+<!doctype html>
+<html lang="ko">
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="format-detection" content="telephone=no" />
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+  <meta charset="utf-8" />
+  <title>components</title>
+  <meta name="keywords" content="@@keywords" />
+  <meta name="description" content="@@description" />
+  <meta property="og:title" content="@@og:title" />
+  <meta property="og:url" content="@@og:url" />
+  <meta property="og:image" content="@@og:image" />
+  <meta property="og:description" content="@@og:description" />
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.63.3/theme/dracula.min.css" />
+  <link href="../../assets/styles/component_guide.css" type="text/css" rel="stylesheet" />
+  <link href="../../../assets/styles/style.css" type="text/css" rel="stylesheet" />
+  <script src="../../../assets/scripts/common.ui.plugin.js"></script>
+  <script src="../../../assets/scripts/common.ui.js" data-init></script>
+  <script src="../../../assets/scripts/common.js"></script>
+
+</head>
+
+<body>
+  <div class="uid-container">
+    <header class="uid-header" id="top-contents">
+      <div class="uid-header-inner">
+        <div class="uid-header-left">
+          <div class="uid-toggle-btn">
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+          </div>
+          <a href="/guide/pages/components/component.html" class="logo-uxgroup"><strong>컴포넌트 가이드</strong></a>
+        </div>
+
+        <ul class="utillity-menu">
+          <li><a href="../../cl.html">퍼블 리스트 바로가기</a></li>
+        </ul>
+      </div>
+    </header>
+    <aside class="uid-sidebar">
+      <nav class="uid-navigation"></nav>
+    </aside>
+    <div class="uid-navigation-dimm"></div>
+
+
+    <main class="uid-main">
+      <h1 class="uid-title01">Typography 설정</h1>
+      <p class="uid-desc">변수에 제목 및 본문텍스트에 사용되는 폰트 스타일을 정의합니다.</p>
+
+      <section class="uid-component"></section>
+      <h2 class="uid-title02">Font</h2>
+      <ul class="uid-list">
+        <li>디자인 Figma 설정된 값으로 적용한다.</li>
+        <li>폰트 추가하는 방법<br>
+          - <code class="uid-codeblock">font-size</code> <code class="uid-codeblock">line-height</code> <code class="uid-codeblock">font-weight</code> 입력 후 '폰트 추가하기' 버튼 클릭<br>
+          - 테이블 추가 및 font mixin 추가됩니다.
+        </li>
+        <li>추가 한 폰트값을 삭제하는 방법(콘솔창에 입력) <br>
+          - 전체 폰트 삭제 : <code class="uid-codeblock">window.clearFontsFromTable()</code><br>
+          - 특정 폰트 크기만 삭제 : <code class="uid-codeblock">window.clearFontsFromTable('25')</code>
+        </li>
+        <li>위 내용 참고 후 컴포넌트 관리도구를 통해 가이드 추가 - README-COLOR-MANAGER.md 파일 참고</li>
+        <!-- <li></li> -->
+      </ul>
+      <div class="code_preview uid-demo">
+        <div class="component-table">
+          <table>
+            <caption>Typeface 컴포넌트 테이블 : Type, Style, Weight, Size</caption>
+            <colgroup>
+              <col width="8%" />
+              <col width="12%" />
+              <col width="12%" />
+              <col width="20%" />
+            </colgroup>
+            <thead>
+              <tr>
+                <th scope="row">Size</th>
+                <th scope="row">Weight</th>
+                <th scope="row">Line Height</th>
+                <th scope="row">Sample</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>56</td>
+                <td>
+                  <p class="">Bold</p>
+                </td>
+                <td>150%(1.5)</td>
+                <td>
+                  <p class="fw_b">가나다라마바사아자차카파타하</p>
+                </td>
+              </tr>
+              <tr>
+                <td>40</td>
+                <td>
+                  <p class="">Bold</p>
+                </td>
+                <td>150%(1.5)</td>
+                <td>
+                  <p class="fw_b">가나다라마바사아자차카파타하</p>
+                </td>
+              </tr>
+              <tr>
+                <td>32</td>
+                <td>
+                  <p class="">Medium, Regular</p>
+                </td>
+                <td>150%(1.5)</td>
+                <td>
+                  <p class="fw_m">가나다라마바사아자차카파타하</p>
+                  <p class="">가나다라마바사아자차카파타하</p>
+                </td>
+              </tr>
+              <tr>
+                <td>24</td>
+                <td>
+                  <p class="">Medium, Regular</p>
+                </td>
+                <td>150%(1.5)</td>
+                <td>
+                  <p class="fw_m">가나다라마바사아자차카파타하</p>
+                  <p class="">가나다라마바사아자차카파타하</p>
+                </td>
+              </tr>
+              <tr>
+                <td>20</td>
+                <td>
+                  <p class="">Medium</p>
+                </td>
+                <td>150%(1.5)</td>
+                <td>
+                  <p class="fw_m">가나다라마바사아자차카파타하</p>
+                </td>
+              </tr>
+              <tr>
+                <td>18</td>
+                <td>
+                  <p class="">Medium, Regular</p>
+                </td>
+                <td>150%(1.5)</td>
+                <td>
+                  <p class="fw_m">가나다라마바사아자차카파타하</p>
+                  <p class="">가나다라마바사아자차카파타하</p>
+                </td>
+              </tr>
+              <tr>
+                <td>16</td>
+                <td>
+                  <p class="">Regular, Medium, Bold</p>
+                </td>
+                <td>150%(1.5)</td>
+                <td>
+                  <p class="fw_b">가나다라마바사아자차카파타하</p>
+                  <p class="fw_m">가나다라마바사아자차카파타하</p>
+                  <p class="">가나다라마바사아자차카파타하</p>
+                </td>
+              </tr>
+              <tr>
+                <td>14</td>
+                <td>
+                  <p class="">Regular, Medium, Bold</p>
+                </td>
+                <td>150%(1.5)</td>
+                <td>
+                  <p class="fw_b">가나다라마바사아자차카파타하</p>
+                  <p class="fw_m">가나다라마바사아자차카파타하</p>
+                  <p class="">가나다라마바사아자차카파타하</p>
+                </td>
+              </tr>
+              <tr>
+                <td>12</td>
+                <td>
+                  <p class="">Regular, Bold</p>
+                </td>
+                <td>150%(1.5)</td>
+                <td>
+                  <p class="fw_b">가나다라마바사아자차카파타하</p>
+                  <p class="">가나다라마바사아자차카파타하</p>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <!-- <div class="code_info">
+            <button class="btn_codecopy ui_btnCodeCopy" data-text-swap="✔️"></button>
+          </div> -->
+      <!-- <textarea class="code_content html ui_code_content" data-code="html"> </textarea> -->
+      </section>
+
+    </main>
+
+    <footer class="uid-footer">
+      <!-- top btn -->
+      <a href="#top" class="btn-uid-top">
+        <span>TOP</span>
+      </a>
+      <!-- //top btn -->
+      <small class="copyright">
+        ©
+        <time class="time ui-copyright">2024</time>
+        ETRIBE UX Group, ALL RIGHTS RESERVED
+      </small>
+    </footer>
+
+  </div>
+  <script src="../../assets/scripts/component_guide.js"></script>
+  <script src="../../assets/scripts/managers/color_manager.js"></script>
+  <script src="../../assets/scripts/managers/font_manager.js"></script>
+  <script>
+    // 폰트 관리 도구 UI 생성
+    document.addEventListener('DOMContentLoaded', function() {
+      // 컬러 관리 도구가 초기화된 후에 실행
+      setTimeout(() => {
+        // 폰트 관리 탭 UI 업데이트
+        const fontTabContent = document.querySelector('.tab-content[data-tab-value="tab2"]');
+        if (fontTabContent) {
+          // 기존 내용 제거
+          fontTabContent.innerHTML = '';
+
+          // 폰트 사이즈 입력 필드
+          const fontSizeGroup = document.createElement('div');
+          fontSizeGroup.style.marginBottom = '15px';
+
+          const fontSizeLabel = document.createElement('label');
+          fontSizeLabel.textContent = 'Font-size (px):';
+          fontSizeLabel.style.display = 'block';
+          fontSizeLabel.style.marginBottom = '5px';
+          fontSizeLabel.style.fontSize = '14px';
+          fontSizeGroup.appendChild(fontSizeLabel);
+
+          const fontSizeInput = document.createElement('input');
+          fontSizeInput.type = 'number';
+          fontSizeInput.id = 'font-size-input';
+          fontSizeInput.placeholder = '예: 16';
+          fontSizeInput.min = '8';
+          fontSizeInput.max = '100';
+          fontSizeInput.style.cssText = `
+              width: 100%;
+              padding: 8px;
+              border: 1px solid #ccc;
+              border-radius: 4px;
+              box-sizing: border-box;
+              margin-bottom: 5px;
+            `;
+          fontSizeGroup.appendChild(fontSizeInput);
+          fontTabContent.appendChild(fontSizeGroup);
+
+          // 라인 하이트 입력 필드
+          const lineHeightGroup = document.createElement('div');
+          lineHeightGroup.style.marginBottom = '15px';
+
+          const lineHeightLabel = document.createElement('label');
+          lineHeightLabel.textContent = 'Line-height:';
+          lineHeightLabel.style.display = 'block';
+          lineHeightLabel.style.marginBottom = '5px';
+          lineHeightLabel.style.fontSize = '14px';
+          lineHeightGroup.appendChild(lineHeightLabel);
+
+          const lineHeightInput = document.createElement('input');
+          lineHeightInput.type = 'text';
+          lineHeightInput.id = 'line-height-input';
+          lineHeightInput.placeholder = '예: 1.5 또는 150%';
+          lineHeightInput.style.cssText = `
+              width: 100%;
+              padding: 8px;
+              border: 1px solid #ccc;
+              border-radius: 4px;
+              box-sizing: border-box;
+              margin-bottom: 5px;
+            `;
+          lineHeightGroup.appendChild(lineHeightInput);
+          fontTabContent.appendChild(lineHeightGroup);
+
+          // 폰트 가중치 체크박스
+          const fontWeightGroup = document.createElement('div');
+          fontWeightGroup.style.marginBottom = '15px';
+
+          const fontWeightLabel = document.createElement('label');
+          fontWeightLabel.textContent = 'Font-weight:';
+          fontWeightLabel.style.display = 'block';
+          fontWeightLabel.style.marginBottom = '5px';
+          fontWeightLabel.style.fontSize = '14px';
+          fontWeightGroup.appendChild(fontWeightLabel);
+
+          const fontWeights = [{
+              value: 'regular',
+              label: 'Regular (400)'
+            },
+            {
+              value: 'medium',
+              label: 'Medium (500)'
+            },
+            {
+              value: 'semibold',
+              label: 'Semi Bold (600)'
+            },
+            {
+              value: 'bold',
+              label: 'Bold (700)'
+            }
+          ];
+
+          fontWeights.forEach((weight) => {
+            const weightOption = document.createElement('div');
+            weightOption.style.marginBottom = '5px';
+
+            const checkbox = document.createElement('input');
+            checkbox.type = 'checkbox';
+            checkbox.name = 'font-weight';
+            checkbox.id = `weight-${weight.value}`;
+            checkbox.value = weight.value;
+
+            const checkboxLabel = document.createElement('label');
+            checkboxLabel.htmlFor = `weight-${weight.value}`;
+            checkboxLabel.textContent = weight.label;
+            checkboxLabel.style.marginLeft = '5px';
+            checkboxLabel.style.fontSize = '14px';
+
+            weightOption.appendChild(checkbox);
+            weightOption.appendChild(checkboxLabel);
+            fontWeightGroup.appendChild(weightOption);
+          });
+
+          fontTabContent.appendChild(fontWeightGroup);
+
+          // 결과 영역 생성
+          const resultArea = document.createElement('div');
+          resultArea.id = 'result-area';
+          resultArea.style.cssText = `
+              display: none;
+              margin-bottom: 15px;
+              padding: 8px;
+              background-color: #f5f5f5;
+              border-radius: 4px;
+              font-size: 14px;
+            `;
+          fontTabContent.appendChild(resultArea);
+
+          // 폰트 추가 버튼
+          const fontButtonGroup = document.createElement('div');
+          fontButtonGroup.style.display = 'flex';
+          fontButtonGroup.style.justifyContent = 'space-between';
+
+          const addFontButton = document.createElement('button');
+          addFontButton.id = 'add-font-btn';
+          addFontButton.textContent = '폰트 추가하기';
+          addFontButton.style.cssText = `
+              padding: 8px 15px;
+              background-color: #4051b8;
+              color: white;
+              border: none;
+              border-radius: 4px;
+              cursor: pointer;
+              flex: 1;
+              margin-right: 5px;
+            `;
+          fontButtonGroup.appendChild(addFontButton);
+
+          fontTabContent.appendChild(fontButtonGroup);
+
+          // 폰트 삭제 버튼
+          const removeFontButton = document.createElement('button');
+          removeFontButton.id = 'clear-font-btn';
+          removeFontButton.textContent = '폰트 삭제하기';
+          removeFontButton.style.cssText = `
+              padding: 8px 15px;
+              background-color: #4051b8;
+              color: white;
+              border: none;
+              border-radius: 4px;
+              cursor: pointer;
+              flex: 1;
+              margin-right: 5px;
+            `;
+          fontButtonGroup.appendChild(removeFontButton);
+
+          fontTabContent.appendChild(fontButtonGroup);
+
+          // 폰트 추가 버튼 이벤트 바인딩
+          addFontButton.addEventListener('click', () => {
+            // 전역 함수 호출
+            if (typeof window.addFontToTable === 'function') {
+              window.addFontToTable();
+            } else {
+              console.error('폰트 추가 함수가 정의되지 않았습니다.');
+              alert('폰트 관리 기능을 사용할 수 없습니다. 페이지를 새로고침해 주세요.');
+            }
+          });
+        }
+      }, 500); // 컬러 관리 도구가 초기화될 시간을 주기 위해 약간의 지연 추가
+    });
+
+  </script>
+</body>
+
+</html>

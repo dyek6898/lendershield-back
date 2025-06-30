@@ -1,0 +1,293 @@
+<!doctype html>
+<html lang="ko">
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="format-detection" content="telephone=no" />
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+  <meta charset="utf-8" />
+  <title>components</title>
+  <meta name="keywords" content="@@keywords" />
+  <meta name="description" content="@@description" />
+  <meta property="og:title" content="@@og:title" />
+  <meta property="og:url" content="@@og:url" />
+  <meta property="og:image" content="@@og:image" />
+  <meta property="og:description" content="@@og:description" />
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.63.3/theme/dracula.min.css" />
+  <link href="../../assets/styles/component_guide.css" type="text/css" rel="stylesheet" />
+  <link href="../../../assets/styles/style.css" type="text/css" rel="stylesheet" />
+  <script src="../../../assets/scripts/common.ui.plugin.js"></script>
+  <script src="../../../assets/scripts/common.ui.js" data-init></script>
+  <script src="../../../assets/scripts/common.js"></script>
+
+</head>
+
+<body>
+  <div class="uid-container">
+    <header class="uid-header" id="top-contents">
+      <div class="uid-header-inner">
+        <div class="uid-header-left">
+          <div class="uid-toggle-btn">
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+          </div>
+          <a href="/guide/pages/components/component.html" class="logo-uxgroup"><strong>컴포넌트 가이드</strong></a>
+        </div>
+
+        <ul class="utillity-menu">
+          <li><a href="../../cl.html">퍼블 리스트 바로가기</a></li>
+        </ul>
+      </div>
+    </header>
+    <aside class="uid-sidebar">
+      <nav class="uid-navigation"></nav>
+    </aside>
+    <div class="uid-navigation-dimm"></div>
+
+
+    <main class="uid-main code-guide">
+      <h1 class="uid-title01">Tooltip</h1>
+      <p class="uid-desc">가이드 모음</p>
+
+      <section class="uid-component">
+        <h2 class="uid-title02">기본 가이드</h2>
+        <ul class="uid-list">
+          <li> 설계 단계의 특별한 UX 요청이나 개발 환경에 따른 제약으로 개발 요청 사항이 없다면 <strong>테스트 완료된 코드</strong>를 <strong>복사 붙여 넣기</strong>를 <strong>기본</strong>으로 합니다. </li>
+        </ul>
+      </section>
+
+      <!-- <section class="uid-component">
+          <h2 class="uid-title02">협의 할 점</h2>
+          <ul class="uid-list">
+            <li>가이드를 작성 합니다.</li>
+          </ul>
+        </section> -->
+
+      <section class="uid-component">
+        <h2 class="uid-title02">접근성 가이드</h2>
+        <ul class="uid-list">
+          <li><code class="uid-codeblock">aria-expanded="false"</code>
+          </li>
+          <li><code class="uid-codeblock">aria-controls="tooltip-container"</code>
+          </li>
+        </ul>
+      </section>
+
+      <section class="uid-component">
+        <!-- S : 작성 단위 / 추가는 article 단위로 입력  -->
+        <article>
+          <h2 class="uid-title02">Tooltip</h2>
+          <ul class="uid-list">
+            <li>
+              <strong>구성 요소</strong>
+              <ul>
+                <li>컴포넌트 클래스: <code class="uid-codeblock">component-tooltip</code>
+                </li>
+              </ul>
+            </li>
+            <!-- <li>
+                <strong>props :</strong>
+                <ul>
+                  <li><code class="uid-codeblock">data-props-position="bottom"</code>: Tooltop-container 위치</li>
+                  <li><code class="uid-codeblock">data-props-position="top"</code>: Tooltop-container 위치</li>
+                  <li><code class="uid-codeblock">data-props-position="left"</code>: Tooltop-container 위치</li>
+                  <li><code class="uid-codeblock">data-props-position="right"</code>: Tooltop-container 위치</li>
+                </ul>
+              </li> -->
+          </ul>
+          <div class="code-wrap">
+            <div class="code_preview uid-demo" style="height: 300px; text-align: center">
+              <iframe class="preview"></iframe>
+            </div>
+            <!--  -->
+            <div class="code-group">
+              <div class="code_info">
+                <button class="btn_codecopy ui_btnCodeCopy" data-text-swap="✔️"></button>
+              </div>
+              <textarea class="code_content html ui_code_content" data-code="html">
+<div
+  class="component-tooltip"
+  data-state="open"
+  data-props-position="bottom"
+>
+  <button
+    type="button"
+    class="btn tooltip-btn-trigger"
+    aria-expanded="false"
+    aria-controls="tooltip-container"
+  >
+    <span class="">Tooltip</span>
+  </button>
+  <div class="tooltip-container">
+    '0세부터 18세까지 미성년의 자녀들' 이 가입하는 경우
+    선택해주세요.
+  </div>
+</div>
+                </textarea>
+            </div>
+            <div class="code-group">
+              <div class="code_info">
+                <button class="btn_codecopy ui_btnCodeCopy" data-text-swap="✔️"></button>
+              </div>
+              <textarea class="code_content css ui_code_content" data-code="css">
+/* css 주석 사용시 이 주석사용 부탁드립니다. */
+                </textarea>
+            </div>
+            <div class="code-group">
+              <div class="code_info">
+                <button class="btn_codecopy ui_btnCodeCopy" data-text-swap="✔️"></button>
+              </div>
+              <textarea class="code_content javascript ui_code_content" data-code="javascript"> </textarea>
+            </div>
+            <div class="code-table">
+              <table class="component-table">
+                <caption>표제목 : 제목1, 제목2, 제목3, 제목4</caption>
+                <col style="width: 18%" />
+                <col style="width: auto" />
+                <col style="width: 20%" />
+                <col style="width: 14%" />
+                <col />
+                <thead>
+                  <tr>
+                    <th style="text-align: left">Name</th>
+                    <th style="text-align: left">Description</th>
+                    <th>Type</th>
+                    <th>Default</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr class="bg-gray">
+                    <td colspan="4">
+                      <button class="btn-toggle">
+                        <span>state</span>
+                      </button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>open</td>
+                    <td style="text-align: left">
+                      <div><span>영림상태</span></div>
+                    </td>
+                    <td>
+                      <div>
+                        <span class="arg-code">boolean</span>
+                      </div>
+                    </td>
+                    <td>
+                      <div><span class="arg-code">false</span></div>
+                    </td>
+                  </tr>
+                  <tr class="bg-gray">
+                    <td colspan="4">
+                      <button class="btn-toggle">
+                        <span>props</span>
+                      </button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>postion</td>
+                    <td style="text-align: left">
+                      <div>
+                        <span>열람 위치</span>
+                      </div>
+                    </td>
+                    <td>
+                      <div>
+                        <span class="arg-code">string</span>
+                      </div>
+                    </td>
+                    <td>
+                      <div><span class="arg-code">bottom</span></div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>clickOutside</td>
+                    <td style="text-align: left">
+                      <div>
+                        <span>툴팁 외부 클릭시 닫힘 기능</span>
+                      </div>
+                    </td>
+                    <td>
+                      <div>
+                        <span class="arg-code">boolean</span>
+                      </div>
+                    </td>
+                    <td>
+                      <div><span class="arg-code">false</span></div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>wrapperSelector</td>
+                    <td style="text-align: left">
+                      <div>
+                        <span>부모요소가 layer-wrap 안에 있을때 layer-tooltip-wrap 으로 보내지 않고 부모요소 position:relative 로 append 할 셀렉터</span>
+                      </div>
+                    </td>
+                    <td>
+                      <div>
+                        <span class="arg-code">string</span>
+                      </div>
+                    </td>
+                    <td>
+                      <div><span class="arg-code">.modal-content</span></div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>afterOpen</td>
+                    <td style="text-align: left">
+                      <div>
+                        <span>열고 난 후 콜백</span>
+                      </div>
+                    </td>
+                    <td>
+                      <div>
+                        <span class="arg-code">function</span>
+                      </div>
+                    </td>
+                    <td>
+                      <div><span class="arg-code">null</span></div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>afterClose</td>
+                    <td style="text-align: left">
+                      <div><span>닫고 난 후 콜백</span></div>
+                    </td>
+                    <td>
+                      <div><span class="arg-code">function</span></div>
+                    </td>
+                    <td>
+                      <div><span class="arg-code">null</span></div>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </article>
+        <!-- E : 작성 단위 / 추가는 article 단위로 입력  -->
+      </section>
+    </main>
+
+    <footer class="uid-footer">
+      <!-- top btn -->
+      <a href="#top" class="btn-uid-top">
+        <span>TOP</span>
+      </a>
+      <!-- //top btn -->
+      <small class="copyright">
+        ©
+        <time class="time ui-copyright">2024</time>
+        ETRIBE UX Group, ALL RIGHTS RESERVED
+      </small>
+    </footer>
+
+  </div>
+
+  <script src="../../assets/scripts/component_guide.js"></script>
+  <script src="../../assets/scripts/managers/color_manager.js"></script>
+</body>
+
+</html>

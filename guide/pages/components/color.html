@@ -1,0 +1,195 @@
+<!doctype html>
+<html lang="ko">
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="format-detection" content="telephone=no" />
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+  <meta charset="utf-8" />
+  <title>components</title>
+  <meta name="keywords" content="@@keywords" />
+  <meta name="description" content="@@description" />
+  <meta property="og:title" content="@@og:title" />
+  <meta property="og:url" content="@@og:url" />
+  <meta property="og:image" content="@@og:image" />
+  <meta property="og:description" content="@@og:description" />
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.63.3/theme/dracula.min.css" />
+  <link href="../../assets/styles/component_guide.css" type="text/css" rel="stylesheet" />
+  <link href="../../../assets/styles/style.css" type="text/css" rel="stylesheet" />
+  <script src="../../../assets/scripts/common.ui.plugin.js"></script>
+  <script src="../../../assets/scripts/common.ui.js" data-init></script>
+  <script src="../../../assets/scripts/common.js"></script>
+
+</head>
+
+<body>
+  <div class="uid-container">
+    <header class="uid-header" id="top-contents">
+      <div class="uid-header-inner">
+        <div class="uid-header-left">
+          <div class="uid-toggle-btn">
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+          </div>
+          <a href="/guide/pages/components/component.html" class="logo-uxgroup"><strong>컴포넌트 가이드</strong></a>
+        </div>
+
+        <ul class="utillity-menu">
+          <li><a href="../../cl.html">퍼블 리스트 바로가기</a></li>
+        </ul>
+      </div>
+    </header>
+    <aside class="uid-sidebar">
+      <nav class="uid-navigation"></nav>
+    </aside>
+    <div class="uid-navigation-dimm"></div>
+
+
+    <main class="uid-main">
+      <h1 class="uid-title01">Color</h1>
+      <p class="uid-desc">가이드 모음</p>
+
+      <section class="uid-component">
+        <h2 class="uid-title02">컬러값 변수 설정</h2>
+        <ul class="uid-list">
+          <li> 폰트컬러(color), 배경컬러(background-color), 라인컬러(border)으로 구분한다.</li>
+          <li>변수 네이밍은 디자인 Figma에 설정된 값으로 적용한다.</li>
+          <li>컬러 추가하는 방법<br>
+            - <code class="uid-codeblock">color-code</code> <code class="uid-codeblock">변수타입</code> 입력 후 '컬러 추가하기' 버튼 클릭<br>
+            - 해당 컬러값이 color.html 및 _variables.scss 파일에 추가됩니다.
+          </li>
+          <li>위 내용 참고 후 컴포넌트 관리도구를 통해 변수 셋팅<br>
+            - README-COLOR-MANAGER.md 파일 참고</li>
+        </ul>
+      </section>
+      <section class="uid-component"></section>
+      <h2 class="uid-title02">Bg Color 클래스 변수 및 컬러값</h2>
+      <div class="code_preview uid-demo">
+        <ul class="component_ul">
+          <li>
+            <div class="component_color bg-navy">
+              <div class="hide-txt">bg-33588f</div>
+            </div>
+            <div class="component_prototype_tit"> $bg-33588f </div>
+            <p>#33588f</p>
+          </li>
+          <li>
+            <div class="component_color bg-purple">
+              <div class="hide-txt">bg_763ba5</div>
+            </div>
+            <div class="component_prototype_tit"> $bg_763ba5 </div>
+            <p>#763ba5</p>
+          </li>
+          <li>
+            <div class="component_color bg-orange">
+              <div class="hide-txt">bg_fea339</div>
+            </div>
+            <div class="component_prototype_tit"> $bg_fea339 </div>
+            <p>#fea339</p>
+          </li>
+          <li>
+            <div class="component_color bg-gray">
+              <div class="hide-txt">bg_d0d0d0</div>
+            </div>
+            <div class="component_prototype_tit"> $bg_d0d0d0 </div>
+            <p>#d0d0d0</p>
+          </li>
+          <li>
+            <div class="component_color bg-gray2">
+              <div class="hide-txt">bg_e0e0e0</div>
+            </div>
+            <div class="component_prototype_tit"> $bg_e0e0e0 </div>
+            <p>#e0e0e0</p>
+          </li>
+        </ul>
+      </div>
+      </section>
+
+      <section class="uid-component">
+        <h2 class="uid-title02">Text Color 클래스 변수 및 컬러값</h2>
+        <div class="code_preview uid-demo">
+          <ul class="component_ul">
+            <li>
+              <div class="component_color color-gray">
+                <div>font_999999</div>
+              </div>
+              <div class="component_prototype_tit"> $font_999999 </div>
+              <p>#999999</p>
+            </li>
+            <li>
+              <div class="component_color color-darkgray">
+                <div>font_777777</div>
+              </div>
+              <div class="component_prototype_tit"> $font_777777 </div>
+              <p>#777777</p>
+            </li>
+            <li>
+              <div class="component_color color-block">
+                <div>font_000000</div>
+              </div>
+              <div class="component_prototype_tit"> $font_000000 </div>
+              <p>#000000</p>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="uid-component">
+        <h2 class="uid-title02">Line Color 클래스 변수 및 컬러값</h2>
+        <div class="code_preview uid-demo">
+          <ul class="component_ul">
+            <li>
+              <div class="component_color border-gray">
+                <div class="hide-txt">line_e0e0e0</div>
+              </div>
+              <div class="component_prototype_tit"> $line_e0e0e0 </div>
+              <p>#e0e0e0</p>
+            </li>
+            <li>
+              <div class="component_color border-gray2">
+                <div class="hide-txt">line_eff3f7</div>
+              </div>
+              <div class="component_prototype_tit"> $line_eff3f7 </div>
+              <p>#eff3f7</p>
+            </li>
+            <li>
+              <div class="component_color border-skypink">
+                <div class="hide-txt">border_fdf1f1</div>
+              </div>
+              <div class="component_prototype_tit"> $border_fdf1f1 </div>
+              <p>#fdf1f1</p>
+            </li>
+            <li>
+              <div class="component_color border-block">
+                <div class="hide-txt">border_000000</div>
+              </div>
+              <div class="component_prototype_tit"> $border_000000 </div>
+              <p>#000000</p>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+    </main>
+
+    <footer class="uid-footer">
+      <!-- top btn -->
+      <a href="#top" class="btn-uid-top">
+        <span>TOP</span>
+      </a>
+      <!-- //top btn -->
+      <small class="copyright">
+        ©
+        <time class="time ui-copyright">2024</time>
+        ETRIBE UX Group, ALL RIGHTS RESERVED
+      </small>
+    </footer>
+
+  </div>
+  <script src="../../assets/scripts/component_guide.js"></script>
+  <script src="../../assets/scripts/managers/color_manager.js"></script>
+</body>
+
+</html>

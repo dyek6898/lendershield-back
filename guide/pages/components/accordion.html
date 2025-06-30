@@ -1,0 +1,484 @@
+<!doctype html>
+<html lang="ko">
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="format-detection" content="telephone=no" />
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+  <meta charset="utf-8" />
+  <title>components</title>
+  <meta name="keywords" content="@@keywords" />
+  <meta name="description" content="@@description" />
+  <meta property="og:title" content="@@og:title" />
+  <meta property="og:url" content="@@og:url" />
+  <meta property="og:image" content="@@og:image" />
+  <meta property="og:description" content="@@og:description" />
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.63.3/theme/dracula.min.css" />
+  <link href="../../assets/styles/component_guide.css" type="text/css" rel="stylesheet" />
+  <link href="../../../assets/styles/style.css" type="text/css" rel="stylesheet" />
+  <script src="../../../assets/scripts/common.ui.plugin.js"></script>
+  <script src="../../../assets/scripts/common.ui.js" data-init></script>
+  <script src="../../../assets/scripts/common.js"></script>
+
+</head>
+
+<body>
+  <div class="uid-container">
+    <header class="uid-header" id="top-contents">
+      <div class="uid-header-inner">
+        <div class="uid-header-left">
+          <div class="uid-toggle-btn">
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+          </div>
+          <a href="/guide/pages/components/component.html" class="logo-uxgroup"><strong>컴포넌트 가이드</strong></a>
+        </div>
+
+        <ul class="utillity-menu">
+          <li><a href="../../cl.html">퍼블 리스트 바로가기</a></li>
+        </ul>
+      </div>
+    </header>
+    <aside class="uid-sidebar">
+      <nav class="uid-navigation"></nav>
+    </aside>
+    <div class="uid-navigation-dimm"></div>
+
+
+    <main class="uid-main code-guide">
+      <h1 class="uid-title01">Accordion</h1>
+      <p class="uid-desc">가이드 모음</p>
+
+      <section class="uid-component">
+        <h2 class="uid-title02">기본 가이드</h2>
+        <ul class="uid-list">
+          <li>설계 단계의 특별한 UX 요청이나 개발 환경에 따른 제약으로 개발 요청 사항이 없다면 테스트 완료된 코드를 복사 붙여 넣기를 기본으로 합니다.</li>
+        </ul>
+      </section>
+
+      <!-- <section class="uid-component">
+          <h2 class="uid-title02">테스트된 브라우저(최신 버전 기준)</h2>
+          <div class="uid-table">
+            <table class="table-fixed">
+              <caption>테스트된 브라우저 테이블 : Chrome, Chrome(모바일), Safari, Firefox</caption>
+<thead>
+  <tr>
+    <th scope="row" class="chrome-pc">
+      <p>Chrome(버전정보)</p>
+    </th>
+    <th scope="row" class="chrome-mb">
+      <p>Chrome Mobile(버전정보)</p>
+    </th>
+    <th scope="row" class="safari">
+      <p>Safari(버전정보)</p>
+    </th>
+    <th scope="row" class="firefox">
+      <p>Firefox(버전정보)</p>
+    </th>
+  </tr>
+</thead>
+
+              <tbody>
+                <tr>
+                  <td>&check;</td>
+                  <td>&check;</td>
+                  <td>&check;</td>
+                  <td>&check;</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <section class="uid-component">
+          <h2 class="uid-title02">테스트된 스크린 리더</h2>
+          <div class="uid-table">
+            <table class="table-fixed">
+              <caption>테스트된 스크린 리더 : 센스리더, VoiceOver (iOS), TalkBack (Android), NVDA</caption>
+<thead>
+  <tr>
+    <th scope="row" class="chrome-pc">
+      <p>센스리더</p>
+    </th>
+    <th scope="row" class="chrome-mb">
+      <p>VoiceOver (iOS)</p>
+    </th>
+    <th scope="row" class="safari">
+      <p>TalkBack (Android)</p>
+    </th>
+    <th scope="row" class="firefox">
+      <p>NVDA</p>
+    </th>
+  </tr>
+</thead>
+
+              <tbody>
+                <tr>
+                  <td>none</td>
+                  <td>supported</td>
+                  <td>supported</td>
+                  <td>partial</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section> -->
+
+      <section class="uid-component">
+        <h2 class="uid-title02">협의 할 점</h2>
+        <ul class="uid-list">
+          <li>가이드를 작성 합니다.</li>
+        </ul>
+      </section>
+
+      <section class="uid-component">
+        <h2 class="uid-title02">접근성 가이드</h2>
+        <ul class="uid-list">
+          <li>가이드를 작성 합니다.</li>
+        </ul>
+      </section>
+
+      <section class="uid-component">
+        <!-- S : 작성 단위 / 추가는 article 단위로 입력  -->
+        <article>
+          <h2 class="uid-title02">Accordion Multiple</h2>
+          <span class="uid-guide">
+            아코디언 컴포넌트는 component-accordion 클래스를 사용합니다.<br />
+            기본값은 <code class="uid-codeblock">type="multiple"</code> 이며, 각 <code class="uid-codeblock">accordion-item</code> 이 개별적으로 열립니다.<br />
+            특정 <code class="uid-codeblock">accordion-item</code> 을 기본적으로 열어두려면 해당 요소에 <code class="uid-codeblock">data-state="open"</code> 속성을 추가하면 됩니다.
+          </span>
+          <ul class="uid-list">
+            <li>
+              <strong>구성 요소</strong><br />
+              컴포넌트 클래스 : <code class="uid-codeblock">component-accordion</code><br />
+              하위 요소 클래스 : <code class="uid-codeblock">accordion-item</code>
+            </li>
+          </ul>
+          <div class="code-wrap">
+            <div class="code_preview uid-demo">
+              <iframe class="preview"></iframe>
+            </div>
+
+            <div class="code-group">
+              <div class="code_info">
+                <button class="btn_codecopy ui_btnCodeCopy" data-text-swap="✔️"></button>
+              </div>
+              <textarea class="code_content html ui_code_content" data-code="html">
+
+<div class="component-accordion">
+  <div class="accordion-item component-collapse">
+    <button type="button" class="collapse-tit">
+      Q. What is HTML?
+    </button>
+    <div class="collapse-content">
+      <div>
+        HTML stands for Hyper Text Markup Language. It is used
+        to create the structure of web pages. HTML stands for
+      </div>
+    </div>
+  </div>
+  <div class="accordion-item component-collapse">
+    <button type="button" class="collapse-tit">
+      Q. What is HTML?
+    </button>
+    <div class="collapse-content">
+      HTML stands for Hyper Text Markup Language. It is used
+    </div>
+  </div>
+  <div class="accordion-item component-collapse">
+    <button type="button" class="collapse-tit">
+      Q. What is HTML?
+    </button>
+    <div class="collapse-content">
+      HTML stands for Hyper Text Markup Language. It is used
+    </div>
+  </div>
+</div>
+
+                </textarea>
+            </div>
+            <div class="code-group">
+              <div class="code_info">
+                <button class="btn_codecopy ui_btnCodeCopy" data-text-swap="✔️"></button>
+              </div>
+              <textarea class="code_content css ui_code_content" data-code="css">
+/* css 주석 사용시 이 주석사용 부탁드립니다. */
+                </textarea>
+            </div>
+            <div class="code-group">
+              <div class="code_info">
+                <button class="btn_codecopy ui_btnCodeCopy" data-text-swap="✔️"></button>
+              </div>
+              <textarea class="code_content javascript ui_code_content" data-code="javascript"></textarea>
+            </div>
+            <div class="code-table">
+              <table class="component-table">
+                <caption>표제목 : 제목1, 제목2, 제목3, 제목4</caption>
+                <col style="width: 18%" />
+                <col style="width: auto" />
+                <col style="width: 20%" />
+                <col style="width: 14%" />
+                <col />
+                <thead>
+                  <tr>
+                    <th style="text-align: left">Name</th>
+                    <th style="text-align: left">Description</th>
+                    <th>Type</th>
+                    <th>Default</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr class="bg-gray">
+                    <td colspan="4">
+                      <button class="btn-toggle">
+                        <span>state</span>
+                      </button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>index</td>
+                    <td style="text-align: left">
+                      <div><span>기본 열림 아코디언</div>
+                    </td>
+                    <td>
+                      <div>
+                        <span class="arg-code">number</span>
+                      </div>
+                    </td>
+                    <td>
+                      <div><span class="arg-code">-1</span></div>
+                    </td>
+                  </tr>
+                  <tr class="bg-gray">
+                    <td colspan="4">
+                      <button class="btn-toggle">
+                        <span>props</span>
+                      </button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>onCloseEl</td>
+                    <td style="text-align: left">
+                      <div>
+                        <span>각각 콜랩스 닫힐때 콜백</span>
+                      </div>
+                    </td>
+                    <td>
+                      <div>
+                        <span class="arg-code">function</span>
+                      </div>
+                    </td>
+                    <td>
+                      <div><span class="arg-code">null</span></div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>onOpenEl</td>
+                    <td style="text-align: left">
+                      <div>
+                        <span>각각 콜랩스 열릴때 콜백</span>
+                      </div>
+                    </td>
+                    <td>
+                      <div>
+                        <span class="arg-code">function</span>
+                      </div>
+                    </td>
+                    <td>
+                      <div><span class="arg-code">null</span></div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>afterClose</td>
+                    <td style="text-align: left">
+                      <div>
+                        <span>닫고 난 후 콜백</span>
+                      </div>
+                    </td>
+                    <td>
+                      <div>
+                        <span class="arg-code">function</span>
+                      </div>
+                    </td>
+                    <td>
+                      <div><span class="arg-code">null</span></div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>afterOpen</td>
+                    <td style="text-align: left">
+                      <div>
+                        <span>열고 난 후 콜백</span>
+                      </div>
+                    </td>
+                    <td>
+                      <div>
+                        <span class="arg-code">function</span>
+                      </div>
+                    </td>
+                    <td>
+                      <div><span class="arg-code">null</span></div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>type</td>
+                    <td style="text-align: left">
+                      <div><span>
+                          여러개 열고 닫기 ( single - 각각의 독립적인 개체 )<br>
+                          한개씩 열고 닫기 ( multiple - 한그룹으로 열리고 닫기가 공유 )
+                        </span></div>
+                    </td>
+                    <td>
+                      <div><span class="arg-code">string</span></div>
+                    </td>
+                    <td>
+                      <div><span class="arg-code">single</span></div>
+                    </td>
+                  </tr>
+                  <tr class="bg-gray">
+                    <td colspan="4">
+                      <button class="btn-toggle">
+                        <span>method</span>
+                      </button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>close</td>
+                    <td style="text-align: left">
+                      <div><span>닫기(해당 index 닫기)</span></div>
+                    </td>
+                    <td>
+                      <div><span class="arg-code">void</span></div>
+                    </td>
+                    <td>
+                      <div><span class="arg-code">number</span></div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>open</td>
+                    <td style="text-align: left">
+                      <div><span>열기(해당 index 열기)</span></div>
+                    </td>
+                    <td>
+                      <div><span class="arg-code">void</span></div>
+                    </td>
+                    <td>
+                      <div><span class="arg-code">number</span></div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>closeAll</td>
+                    <td style="text-align: left">
+                      <div><span>전체 닫기</span></div>
+                    </td>
+                    <td>
+                      <div><span class="arg-code">void</span></div>
+                    </td>
+                    <td>
+                      <div><span class="arg-code">null</span></div>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </article>
+        <article>
+          <h2 class="uid-title02">Accordion Single</h2>
+          <span class="uid-guide">
+            <code class="uid-codeblock">data-props-type="single"</code> 속성을 적용하면 <code class="uid-codeblock">accordion-item</code> 이 열릴 때 기존에 열린 항목은 자동으로 닫힙니다.<br />
+            특정 <code class="uid-codeblock">accordion-item</code> 을 기본적으로 열어두려면 해당 요소에 <code class="uid-codeblock">data-state="open"</code> 속성을 추가하면 됩니다.
+          </span>
+          <ul class="uid-list">
+            <li>
+              <strong>구성 요소</strong><br />
+              컴포넌트 클래스 : <code class="uid-codeblock">component-accordion</code><br />
+              하위 요소 클래스 : <code class="uid-codeblock">accordion-item</code>
+            </li>
+          </ul>
+          <div class="code-wrap">
+            <div class="code_preview uid-demo">
+              <iframe class="preview"></iframe>
+            </div>
+
+            <div class="code-group">
+              <div class="code_info">
+                <button class="btn_codecopy ui_btnCodeCopy" data-text-swap="✔️"></button>
+              </div>
+              <textarea class="code_content html ui_code_content" data-code="html">
+
+<div
+  class="component-accordion"
+  data-props-type="single"
+  data-props-index="0"
+>
+  <div class="accordion-item" data-state="open">
+    <button type="button" class="collapse-tit">
+      Q. What is HTML?
+    </button>
+    <div class="collapse-content">
+      HTML stands for Hyper Text Markup Language. It is used
+    </div>
+  </div>
+  <div class="accordion-item">
+    <button type="button" class="collapse-tit">
+      Q. What is HTML?
+    </button>
+    <div class="collapse-content">
+      HTML stands for Hyper Text Markup Language. It is used
+    </div>
+  </div>
+  <div class="accordion-item">
+    <button type="button" class="collapse-tit">
+      Q. What is HTML?
+    </button>
+    <div class="collapse-content">
+      HTML stands for Hyper Text Markup Language. It is used
+    </div>
+  </div>
+</div>
+
+                </textarea>
+            </div>
+            <div class="code-group">
+              <div class="code_info">
+                <button class="btn_codecopy ui_btnCodeCopy" data-text-swap="✔️"></button>
+              </div>
+              <textarea class="code_content css ui_code_content" data-code="css">
+/* css 주석 사용시 이 주석사용 부탁드립니다. */
+                </textarea>
+            </div>
+            <div class="code-group">
+              <div class="code_info">
+                <button class="btn_codecopy ui_btnCodeCopy" data-text-swap="✔️"></button>
+              </div>
+              <textarea class="code_content javascript ui_code_content" data-code="javascript"></textarea>
+            </div>
+          </div>
+        </article>
+        <!-- E : 작성 단위 / 추가는 article 단위로 입력  -->
+      </section>
+    </main>
+
+    <footer class="uid-footer">
+      <!-- top btn -->
+      <a href="#top" class="btn-uid-top">
+        <span>TOP</span>
+      </a>
+      <!-- //top btn -->
+      <small class="copyright">
+        ©
+        <time class="time ui-copyright">2024</time>
+        ETRIBE UX Group, ALL RIGHTS RESERVED
+      </small>
+    </footer>
+
+  </div>
+  <script src="../../assets/scripts/component_guide.js"></script>
+  <script src="../../assets/scripts/managers/color_manager.js"></script>
+  <script></script>
+</body>
+
+</html>

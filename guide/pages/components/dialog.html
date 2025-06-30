@@ -1,0 +1,838 @@
+<!doctype html>
+<html lang="ko">
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="format-detection" content="telephone=no" />
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+  <meta charset="utf-8" />
+  <title>components</title>
+  <meta name="keywords" content="@@keywords" />
+  <meta name="description" content="@@description" />
+  <meta property="og:title" content="@@og:title" />
+  <meta property="og:url" content="@@og:url" />
+  <meta property="og:image" content="@@og:image" />
+  <meta property="og:description" content="@@og:description" />
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.63.3/theme/dracula.min.css" />
+  <link href="../../assets/styles/component_guide.css" type="text/css" rel="stylesheet" />
+  <link href="../../../assets/styles/style.css" type="text/css" rel="stylesheet" />
+  <script src="../../../assets/scripts/common.ui.plugin.js"></script>
+  <script src="../../../assets/scripts/common.ui.js" data-init></script>
+  <script src="../../../assets/scripts/common.js"></script>
+
+</head>
+
+<body>
+  <div class="uid-container">
+    <header class="uid-header" id="top-contents">
+      <div class="uid-header-inner">
+        <div class="uid-header-left">
+          <div class="uid-toggle-btn">
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+          </div>
+          <a href="/guide/pages/components/component.html" class="logo-uxgroup"><strong>컴포넌트 가이드</strong></a>
+        </div>
+
+        <ul class="utillity-menu">
+          <li><a href="../../cl.html">퍼블 리스트 바로가기</a></li>
+        </ul>
+      </div>
+    </header>
+    <aside class="uid-sidebar">
+      <nav class="uid-navigation"></nav>
+    </aside>
+    <div class="uid-navigation-dimm"></div>
+
+
+    <main class="uid-main code-guide">
+      <h1 class="uid-title01">Dialog</h1>
+      <p class="uid-desc">가이드 모음</p>
+
+      <section class="uid-component">
+        <h2 class="uid-title02">기본 가이드</h2>
+        <ul class="uid-list">
+          <li>설계 단계의 특별한 UX 요청이나 개발 환경에 따른 제약으로 개발 요청 사항이 없다면 <strong>테스트 완료된 코드</strong>를 <strong>복사 붙여 넣기</strong>를 <strong>기본</strong>으로 합니다.</li>
+          <li>Alert와 Confirm은 layer-wrap 내부에 동적으로 생성되므로, 모달과 달리 별도의 <code class="uid-codeblock">component-dialog</code> 클래스를 추가할 필요가 없습니다.</li>
+        </ul>
+      </section>
+
+      <section class="uid-component">
+        <h2 class="uid-title02">협의 할 점</h2>
+        <ul class="uid-list">
+          <li>가이드를 작성 합니다.</li>
+        </ul>
+      </section>
+
+      <!-- <section class="uid-component">
+          <h2 class="uid-title02">접근성 가이드</h2>
+          <ul class="uid-list"> </ul>
+        </section> -->
+
+      <section class="uid-component">
+        <!-- S : 작성 단위 / 추가는 article 단위로 입력  -->
+        <article>
+          <h2 class="uid-title02">Alert</h2>
+          <ul class="uid-list">
+            <li>
+              <strong>구성 요소</strong>
+              <ul>
+                <li>컴포넌트 클래스: <code class="uid-codeblock">component-dialog</code>
+                </li>
+              </ul>
+            </li>
+          </ul>
+          <div class="code-wrap">
+            <div class="custom_preview">
+              <button class="btn type-primary btn-dialog01">Alert</button>
+            </div>
+            <div class="code-group">
+              <div class="code_info">
+                <button class="btn_codecopy ui_btnCodeCopy" data-text-swap="✔️"></button>
+              </div>
+              <textarea class="code_content html ui_code_content" data-code="html">
+<!--S: alert 트리거 버튼 -->
+<button class="btn btn-dialog01">Alert</button>
+<!--E: alert 트리거 버튼 -->
+
+<!--S: 이곳에 alert가 동적으로 생성됩니다. -->
+<div class="layer-wrap"></div>
+<!--E: 이곳에 alert가 동적으로 생성됩니다. -->
+
+<!--S: alert 스크립트 -->
+<script>
+  document.querySelector(".btn-dialog01").addEventListener("click", function () {
+    const msg = `
+      애국가(愛國歌)는 ‘나라를 사랑하는 노래’라는 뜻이에요. 우리나라는 애국가에 특별한 이름을 붙이지 않고 국가(國歌)로 사용하고 있어요.
+      오늘날 불리고 있는 애국가 노랫말은 우리나라가 외세의 침략으로 위기에 처해있던 시기(1907년 전후)에 나라 사랑하는 마음과 우리 민족의
+      자주의식을 북돋우기 위해 만들어진 것으로 보여져요.
+      그 후 여러 선각자의 손을 거쳐 현재와 같은 내용을 담게 되었는데 이 노랫말에 붙여진 곡조는 스코틀랜드 민요 ‘올드 랭 사인 (Auld Lang Syne)’ 이었답니다.
+      당시 해외에서 활동 중이던 작곡가 안익태(安益泰) 선생은 애국가에 남의 나라 곡을 붙여 부르는 것을 안타깝게 여겨 1935년에 오늘날의 애국가를 작곡하였다고 해요.
+      1948년 대한민국 정부가 수립된 이후 현재의 애국가가 정부의 공식행사에서 불려지고, 교과서에도 실리면서 전국적으로 불려지기 시작했답니다.
+      한 세기 가까운 세월 동안 슬플 때나 기쁠 때나 우리 겨레와 운명을 같이 해 온 애국가를 부를 때마다 우리 모두 선조들의 나라 사랑 정신을 새롭게 되새겨보아요.
+    `;
+    etUI.dialog.alert(msg);
+  });
+</script>
+<!--E: alert 스크립트 -->
+                </textarea>
+            </div>
+            <div class="code-group">
+              <div class="code_info">
+                <button class="btn_codecopy ui_btnCodeCopy" data-text-swap="✔️"></button>
+              </div>
+              <textarea class="code_content css ui_code_content" data-code="css">
+/* css 주석 사용시 이 주석사용 부탁드립니다. */
+                </textarea>
+            </div>
+            <div class="code-group">
+              <div class="code_info">
+                <button class="btn_codecopy ui_btnCodeCopy" data-text-swap="✔️"></button>
+              </div>
+              <textarea class="code_content javascript ui_code_content" data-code="javascript"> </textarea>
+            </div>
+            <div class="code-table">
+              <table class="component-table">
+                <caption>표제목 : 제목1, 제목2, 제목3, 제목4</caption>
+                <col style="width: 18%" />
+                <col style="width: auto" />
+                <col style="width: 20%" />
+                <col style="width: 14%" />
+                <col />
+                <thead>
+                  <tr>
+                    <th style="text-align: left">Name</th>
+                    <th style="text-align: left">Description</th>
+                    <th>Type</th>
+                    <th>Default</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr class="bg-gray">
+                    <td colspan="4">
+                      <button class="btn-toggle">
+                        <span>state</span>
+                      </button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>state</td>
+                    <td style="text-align: left">
+                      <div><span>열림, 닫힘 상태</div>
+                    </td>
+                    <td>
+                      <div>
+                        <span class="arg-code">string</span>
+                      </div>
+                    </td>
+                    <td>
+                      <div><span class="arg-code">close</span></div>
+                    </td>
+                  </tr>
+                  <tr class="bg-gray">
+                    <td colspan="4">
+                      <button class="btn-toggle">
+                        <span>props</span>
+                      </button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>message</td>
+                    <td style="text-align: left">
+                      <div>
+                        <span>메세지</span>
+                      </div>
+                    </td>
+                    <td>
+                      <div>
+                        <span class="arg-code">string</span>
+                      </div>
+                    </td>
+                    <td>
+                      <div><span class="arg-code">null</span></div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>esc</td>
+                    <td style="text-align: left">
+                      <div>
+                        <span>Key ESC 누름 닫힘 기능</span>
+                      </div>
+                    </td>
+                    <td>
+                      <div>
+                        <span class="arg-code">boolean</span>
+                      </div>
+                    </td>
+                    <td>
+                      <div><span class="arg-code">true</span></div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>title</td>
+                    <td style="text-align: left">
+                      <div>
+                        <span>타이틀</span>
+                      </div>
+                    </td>
+                    <td>
+                      <div>
+                        <span class="arg-code">string</span>
+                      </div>
+                    </td>
+                    <td>
+                      <div><span class="arg-code">null</span></div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>positionText</td>
+                    <td style="text-align: left">
+                      <div>
+                        <span>확인버튼 텍스트</span>
+                      </div>
+                    </td>
+                    <td>
+                      <div>
+                        <span class="arg-code">string</span>
+                      </div>
+                    </td>
+                    <td>
+                      <div><span class="arg-code">확인</span></div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>negtiveText</td>
+                    <td style="text-align: left">
+                      <div><span>취소버튼 텍스트</span></div>
+                    </td>
+                    <td>
+                      <div><span class="arg-code">string</span></div>
+                    </td>
+                    <td>
+                      <div><span class="arg-code">취소</span></div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>dimmClick</td>
+                    <td style="text-align: left">
+                      <div><span>딤 클릭시 닫힘 기능</span></div>
+                    </td>
+                    <td>
+                      <div><span class="arg-code">boolean</span></div>
+                    </td>
+                    <td>
+                      <div><span class="arg-code">true</span></div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>afterOpen</td>
+                    <td style="text-align: left">
+                      <div><span>열릴 후 콜백</span></div>
+                    </td>
+                    <td>
+                      <div><span class="arg-code">funciton</span></div>
+                    </td>
+                    <td>
+                      <div><span class="arg-code">null</span></div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>type</td>
+                    <td style="text-align: left">
+                      <div><span>확인 : 알럴트, 확인,<br>취소 : 컨펌</span></div>
+                    </td>
+                    <td>
+                      <div><span class="arg-code">string</span></div>
+                    </td>
+                    <td>
+                      <div><span class="arg-code">alert</span></div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>scrollLock</td>
+                    <td style="text-align: left">
+                      <div><span>팝업 열릴떄 body 스크롤 잠김</span></div>
+                    </td>
+                    <td>
+                      <div><span class="arg-code">boolean</span></div>
+                    </td>
+                    <td>
+                      <div><span class="arg-code">false</span></div>
+                    </td>
+                  </tr>
+                  <tr class="bg-gray">
+                    <td colspan="4">
+                      <button class="btn-toggle">
+                        <span>method</span>
+                      </button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>close</td>
+                    <td style="text-align: left">
+                      <div><span>닫기</span></div>
+                    </td>
+                    <td>
+                      <div><span class="arg-code">null</span></div>
+                    </td>
+                    <td>
+                      <div><span class="arg-code">null</span></div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>open</td>
+                    <td style="text-align: left">
+                      <div><span>열기</span></div>
+                    </td>
+                    <td>
+                      <div><span class="arg-code">null</span></div>
+                    </td>
+                    <td>
+                      <div><span class="arg-code">null</span></div>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </article>
+        <!-- E : 작성 단위 / 추가는 article 단위로 입력  -->
+
+        <!-- S : 작성 단위 / 추가는 article 단위로 입력  -->
+        <article>
+          <h2 class="uid-title02">Alert(with title)</h2>
+          <ul class="uid-list">
+            <li>
+              <strong>구성 요소</strong>
+              <ul>
+                <li>컴포넌트 클래스: <code class="uid-codeblock">component-dialog</code>
+                </li>
+              </ul>
+            </li>
+          </ul>
+          <div class="code-wrap">
+            <div class="custom_preview">
+              <button class="btn type-primary btn-dialog02">Alert(with title)</button>
+            </div>
+            <div class="code-group">
+              <div class="code_info">
+                <button class="btn_codecopy ui_btnCodeCopy" data-text-swap="✔️"></button>
+              </div>
+              <textarea class="code_content html ui_code_content" data-code="html">
+<!--S: alert 트리거 버튼 -->
+<button class="btn btn-dialog02">Alert(with title)</button>
+<!--E: alert 트리거 버튼 -->
+
+<!--S: 이곳에 alert가 동적으로 생성됩니다. -->
+<div class="layer-wrap"></div>
+<!--E: 이곳에 alert가 동적으로 생성됩니다. -->
+
+<!--S: alert 스크립트 -->
+<script>
+  document.querySelector(".btn-dialog02").addEventListener("click", function () {
+    etUI.dialog.alert({
+      title: "alert title",
+      message: "alert message",
+      callback: function () {
+        console.log("alert callback");
+      },
+    });
+  });
+</script>
+<!--E: alert 스크립트 -->
+                </textarea>
+            </div>
+            <div class="code-group">
+              <div class="code_info">
+                <button class="btn_codecopy ui_btnCodeCopy" data-text-swap="✔️"></button>
+              </div>
+              <textarea class="code_content css ui_code_content" data-code="css">
+/* css 주석 사용시 이 주석사용 부탁드립니다. */
+                </textarea>
+            </div>
+            <div class="code-group">
+              <div class="code_info">
+                <button class="btn_codecopy ui_btnCodeCopy" data-text-swap="✔️"></button>
+              </div>
+              <textarea class="code_content javascript ui_code_content" data-code="javascript"> </textarea>
+            </div>
+          </div>
+        </article>
+        <!-- E : 작성 단위 / 추가는 article 단위로 입력  -->
+
+        <!-- S : 작성 단위 / 추가는 article 단위로 입력  -->
+        <article>
+          <h2 class="uid-title02">Alert(with icon)</h2>
+          <ul class="uid-list">
+            <li>
+              <strong>구성 요소</strong>
+              <ul>
+                <li>컴포넌트 클래스: <code class="uid-codeblock">component-dialog</code>
+                </li>
+              </ul>
+            </li>
+          </ul>
+          <div class="code-wrap">
+            <div class="custom_preview">
+              <button class="btn type-primary btn-dialog03">Alert(with icon)</button>
+            </div>
+            <div class="code-group">
+              <div class="code_info">
+                <button class="btn_codecopy ui_btnCodeCopy" data-text-swap="✔️"></button>
+              </div>
+              <textarea class="code_content html ui_code_content" data-code="html">
+<!--S: alert 트리거 버튼 -->
+<button class="btn btn-dialog03">Alert(with icon)</button>
+<!--E: alert 트리거 버튼 -->
+
+<!--S: 이곳에 alert가 동적으로 생성됩니다. -->
+<div class="layer-wrap"></div>
+<!--E: 이곳에 alert가 동적으로 생성됩니다. -->
+
+<!--S: alert 스크립트 -->
+<script>
+  document.querySelector(".btn-dialog03").addEventListener("click", function () {
+    etUI.dialog.alert({
+      title: "alert title",
+      message: "alert message",
+      callback: function () {
+        console.log("alert callback");
+      },
+    });
+  });
+</script>
+<!--E: alert 스크립트 -->
+                </textarea>
+            </div>
+            <div class="code-group">
+              <div class="code_info">
+                <button class="btn_codecopy ui_btnCodeCopy" data-text-swap="✔️"></button>
+              </div>
+              <textarea class="code_content css ui_code_content" data-code="css">
+/* css 주석 사용시 이 주석사용 부탁드립니다. */
+                </textarea>
+            </div>
+            <div class="code-group">
+              <div class="code_info">
+                <button class="btn_codecopy ui_btnCodeCopy" data-text-swap="✔️"></button>
+              </div>
+              <textarea class="code_content javascript ui_code_content" data-code="javascript"> </textarea>
+            </div>
+          </div>
+        </article>
+        <!-- E : 작성 단위 / 추가는 article 단위로 입력  -->
+
+        <!-- S : 작성 단위 / 추가는 article 단위로 입력  -->
+        <article>
+          <h2 class="uid-title02">Confirm</h2>
+          <ul class="uid-list">
+            <li>
+              <strong>구성 요소</strong>
+              <ul>
+                <li>컴포넌트 클래스: <code class="uid-codeblock">component-dialog</code>
+                </li>
+              </ul>
+            </li>
+          </ul>
+          <div class="code-wrap">
+            <div class="custom_preview">
+              <button class="btn type-primary btn-dialog04">Confirm</button>
+            </div>
+            <div class="code-group">
+              <div class="code_info">
+                <button class="btn_codecopy ui_btnCodeCopy" data-text-swap="✔️"></button>
+              </div>
+              <textarea class="code_content html ui_code_content" data-code="html">
+<!--S: alert 트리거 버튼 -->
+<button class="btn btn-dialog03">confirm</button>
+<!--E: alert 트리거 버튼 -->
+
+<!--S: 이곳에 alert가 동적으로 생성됩니다. -->
+<div class="layer-wrap"></div>
+<!--E: 이곳에 alert가 동적으로 생성됩니다. -->
+
+<!--S: alert 스크립트 -->
+<script>
+document.querySelector(".btn-dialog04").addEventListener("click", function () {
+  etUI.dialog.confirm("컨펌 메세지", () => {
+    console.log("긍정 콜백");
+  });
+});
+</script>
+<!--E: alert 스크립트 -->
+                </textarea>
+            </div>
+            <div class="code-group">
+              <div class="code_info">
+                <button class="btn_codecopy ui_btnCodeCopy" data-text-swap="✔️"></button>
+              </div>
+              <textarea class="code_content css ui_code_content" data-code="css">
+/* css 주석 사용시 이 주석사용 부탁드립니다. */
+                </textarea>
+            </div>
+            <div class="code-group">
+              <div class="code_info">
+                <button class="btn_codecopy ui_btnCodeCopy" data-text-swap="✔️"></button>
+              </div>
+              <textarea class="code_content javascript ui_code_content" data-code="javascript"> </textarea>
+            </div>
+          </div>
+        </article>
+        <!-- E : 작성 단위 / 추가는 article 단위로 입력  -->
+
+        <!-- S : 작성 단위 / 추가는 article 단위로 입력  -->
+        <article>
+          <h2 class="uid-title02">Confirm(with title)</h2>
+          <ul class="uid-list">
+            <li>
+              <strong>구성 요소</strong>
+              <ul>
+                <li>컴포넌트 클래스: <code class="uid-codeblock">component-dialog</code>
+                </li>
+              </ul>
+            </li>
+          </ul>
+          <div class="code-wrap">
+            <div class="custom_preview">
+              <button class="btn type-primary btn-dialog05">Confirm(with title)</button>
+            </div>
+            <div class="code-group">
+              <div class="code_info">
+                <button class="btn_codecopy ui_btnCodeCopy" data-text-swap="✔️"></button>
+              </div>
+              <textarea class="code_content html ui_code_content" data-code="html">
+<!--S: alert 트리거 버튼 -->
+<button class="btn btn-dialog04">confirm</button>
+<!--E: alert 트리거 버튼 -->
+
+<!--S: 이곳에 alert가 동적으로 생성됩니다. -->
+<div class="layer-wrap"></div>
+<!--E: 이곳에 alert가 동적으로 생성됩니다. -->
+
+<!--S: alert 스크립트 -->
+<script>
+document.querySelector(".btn-dialog05").addEventListener("click", function () {
+  etUI.dialog.confirm({
+    title: "confirm title",
+    message: "confirm message",
+    negativeCallback: function () {
+      console.log("negativeCallback");
+    },
+    positiveCallback: function () {
+      console.log("positiveCallback");
+    },
+  });
+});
+</script>
+<!--E: alert 스크립트 -->
+                </textarea>
+            </div>
+            <div class="code-group">
+              <div class="code_info">
+                <button class="btn_codecopy ui_btnCodeCopy" data-text-swap="✔️"></button>
+              </div>
+              <textarea class="code_content css ui_code_content" data-code="css">
+/* css 주석 사용시 이 주석사용 부탁드립니다. */
+                </textarea>
+            </div>
+            <div class="code-group">
+              <div class="code_info">
+                <button class="btn_codecopy ui_btnCodeCopy" data-text-swap="✔️"></button>
+              </div>
+              <textarea class="code_content javascript ui_code_content" data-code="javascript"> </textarea>
+            </div>
+          </div>
+        </article>
+        <!-- E : 작성 단위 / 추가는 article 단위로 입력  -->
+
+        <!-- S : 작성 단위 / 추가는 article 단위로 입력  -->
+        <article>
+          <h2 class="uid-title02">confirm(with custom button name)</h2>
+          <ul class="uid-list">
+            <li>
+              <strong>구성 요소</strong>
+              <ul>
+                <li>컴포넌트 클래스: <code class="uid-codeblock">component-dialog</code>
+                </li>
+              </ul>
+            </li>
+          </ul>
+          <div class="code-wrap">
+            <div class="custom_preview">
+              <button class="btn type-primary btn-dialog06">confirm(with custom button name)</button>
+            </div>
+            <div class="code-group">
+              <div class="code_info">
+                <button class="btn_codecopy ui_btnCodeCopy" data-text-swap="✔️"></button>
+              </div>
+              <textarea class="code_content html ui_code_content" data-code="html">
+<!--S: alert 트리거 버튼 -->
+<button class="btn btn-dialog06">confirm</button>
+<!--E: alert 트리거 버튼 -->
+
+<!--S: 이곳에 alert가 동적으로 생성됩니다. -->
+<div class="layer-wrap"></div>
+<!--E: 이곳에 alert가 동적으로 생성됩니다. -->
+
+<!--S: alert 스크립트 -->
+<script>
+document.querySelector(".btn-dialog06").addEventListener("click", function () {
+  etUI.dialog.confirm({
+    title: "confirm title",
+    message: "confirm message",
+    negativeText: "부정닫힘(커스텀텍스트)",
+    positiveText: "긍정닫힘(커스텀텍스트)",
+    negativeCallback: function () {
+      console.log("negativeCallback");
+    },
+    positiveCallback: function () {
+      console.log("positiveCallback");
+    },
+  });
+});
+</script>
+<!--E: alert 스크립트 -->
+                </textarea>
+            </div>
+            <div class="code-group">
+              <div class="code_info">
+                <button class="btn_codecopy ui_btnCodeCopy" data-text-swap="✔️"></button>
+              </div>
+              <textarea class="code_content css ui_code_content" data-code="css">
+/* css 주석 사용시 이 주석사용 부탁드립니다. */
+                </textarea>
+            </div>
+            <div class="code-group">
+              <div class="code_info">
+                <button class="btn_codecopy ui_btnCodeCopy" data-text-swap="✔️"></button>
+              </div>
+              <textarea class="code_content javascript ui_code_content" data-code="javascript"> </textarea>
+            </div>
+          </div>
+        </article>
+        <!-- E : 작성 단위 / 추가는 article 단위로 입력  -->
+
+        <!-- S : 작성 단위 / 추가는 article 단위로 입력  -->
+        <article>
+          <h2 class="uid-title02">preview images</h2>
+          <ul class="uid-list">
+            <li>
+              <strong>구성 요소</strong>
+              <ul>
+                <li>컴포넌트 클래스: <code class="uid-codeblock">component-dialog</code>
+                </li>
+              </ul>
+            </li>
+          </ul>
+          <div class="code-wrap">
+            <div class="custom_preview">
+              <button class="btn type-primary btn-dialog07">preview images</button>
+            </div>
+            <div class="code-group">
+              <div class="code_info">
+                <button class="btn_codecopy ui_btnCodeCopy" data-text-swap="✔️"></button>
+              </div>
+              <textarea class="code_content html ui_code_content" data-code="html">
+<!--S: alert 트리거 버튼 -->
+<button class="btn btn-dialog06">preview images</button>
+<!--E: alert 트리거 버튼 -->
+
+<!--S: 이곳에 alert가 동적으로 생성됩니다. -->
+<div class="layer-wrap"></div>
+<!--E: 이곳에 alert가 동적으로 생성됩니다. -->
+
+<!--S: alert 스크립트 -->
+<script>
+document.querySelector(".btn-dialog07").addEventListener("click", function () {
+  etUI.dialog.previewImage({
+    title: "preview image",
+    images: [
+      {
+        src: "https://i.ibb.co/6Hn3QGG/image.jpg",
+        alt: "image01",
+      },
+      {
+        src: "https://i.ibb.co/4FpJSG7/image.jpg",
+        alt: "image02",
+      },
+      {
+        src: "https://i.ibb.co/zVgTPq6/image.jpg",
+        alt: "image03",
+      },
+    ],
+  });
+});
+</script>
+<!--E: alert 스크립트 -->
+                </textarea>
+            </div>
+            <div class="code-group">
+              <div class="code_info">
+                <button class="btn_codecopy ui_btnCodeCopy" data-text-swap="✔️"></button>
+              </div>
+              <textarea class="code_content css ui_code_content" data-code="css">
+/* css 주석 사용시 이 주석사용 부탁드립니다. */
+                </textarea>
+            </div>
+            <div class="code-group">
+              <div class="code_info">
+                <button class="btn_codecopy ui_btnCodeCopy" data-text-swap="✔️"></button>
+              </div>
+              <textarea class="code_content javascript ui_code_content" data-code="javascript"> </textarea>
+            </div>
+          </div>
+        </article>
+        <!-- E : 작성 단위 / 추가는 article 단위로 입력  -->
+      </section>
+    </main>
+
+    <footer class="uid-footer">
+      <!-- top btn -->
+      <a href="#top" class="btn-uid-top">
+        <span>TOP</span>
+      </a>
+      <!-- //top btn -->
+      <small class="copyright">
+        ©
+        <time class="time ui-copyright">2024</time>
+        ETRIBE UX Group, ALL RIGHTS RESERVED
+      </small>
+    </footer>
+
+  </div>
+  <div class="layer-wrap"></div>
+  <script src="../../assets/scripts/component_guide.js"></script>
+  <script src="../../assets/scripts/managers/color_manager.js"></script>
+  <script>
+    document.querySelector(".btn-dialog01").addEventListener("click", function() {
+      const msg = `
+        애국가(愛國歌)는 ‘나라를 사랑하는 노래’라는 뜻이에요. 우리나라는 애국가에 특별한 이름을 붙이지 않고 국가(國歌)로 사용하고 있어요.
+        오늘날 불리고 있는 애국가 노랫말은 우리나라가 외세의 침략으로 위기에 처해있던 시기(1907년 전후)에 나라 사랑하는 마음과 우리 민족의 자주의식을 북돋우기 위해 만들어진 것으로 보여져요.
+        그 후 여러 선각자의 손을 거쳐 현재와 같은 내용을 담게 되었는데 이 노랫말에 붙여진 곡조는 스코틀랜드 민요 ‘올드 랭 사인 (Auld Lang Syne)’ 이었답니다. 당시 해외에서 활동 중이던 작곡가 안익태(安益泰) 선생은 애국가에 남의 나라 곡을 붙여 부르는 것을 안타깝게 여겨 1935년에 오늘날의 애국가를 작곡하였다고 해요.
+        1948년 대한민국 정부가 수립된 이후 현재의 애국가가 정부의 공식행사에서 불려지고, 교과서에도 실리면서 전국적으로 불려지기 시작했답니다.
+        한 세기 가까운 세월 동안 슬플 때나 기쁠 때나 우리 겨레와 운명을 같이 해 온 애국가를 부를 때마다 우리 모두 선조들의 나라 사랑 정신을 새롭게 되새겨보아요.
+      `;
+      etUI.dialog.alert(msg);
+    });
+
+    document.querySelector(".btn-dialog02").addEventListener("click", function() {
+      etUI.dialog.alert({
+        title: "alert title",
+        message: "alert message",
+        callback: function() {
+          console.log("alert callback");
+        },
+      });
+    });
+
+    document.querySelector(".btn-dialog03").addEventListener("click", function() {
+      etUI.dialog.alert({
+        type: "error", // 'alert', 'error', 'info
+        title: "alert title",
+        message: "alert message",
+        positiveText: "닫기",
+        callback: function() {
+          console.log("alert callback");
+        },
+      });
+    });
+
+    document.querySelector(".btn-dialog04").addEventListener("click", function() {
+      etUI.dialog.confirm("컨펌 메세지", () => {
+        console.log("긍정 콜백");
+      });
+    });
+
+    document.querySelector(".btn-dialog05").addEventListener("click", function() {
+      etUI.dialog.confirm({
+        title: "confirm title",
+        message: "confirm message",
+        negativeCallback: function() {
+          console.log("negativeCallback");
+        },
+        positiveCallback: function() {
+          console.log("positiveCallback");
+        },
+      });
+    });
+
+    document.querySelector(".btn-dialog06").addEventListener("click", function() {
+      etUI.dialog.confirm({
+        title: "confirm title",
+        message: "confirm message",
+        negativeText: "부정닫힘(커스텀텍스트)",
+        positiveText: "긍정닫힘(커스텀텍스트)",
+        negativeCallback: function() {
+          console.log("negativeCallback");
+        },
+        positiveCallback: function() {
+          console.log("positiveCallback");
+        },
+      });
+    });
+
+    document.querySelector(".btn-dialog07").addEventListener("click", function() {
+      etUI.dialog.previewImage({
+        title: "preview image",
+        images: [{
+            src: "https://i.ibb.co/6Hn3QGG/image.jpg",
+            alt: "image01",
+          },
+          {
+            src: "https://i.ibb.co/4FpJSG7/image.jpg",
+            alt: "image02",
+          },
+          {
+            src: "https://i.ibb.co/zVgTPq6/image.jpg",
+            alt: "image03",
+          },
+        ],
+      });
+    });
+
+  </script>
+</body>
+
+</html>
