@@ -77,8 +77,44 @@ etUI.utils.ready(function () {
     });
   };
 
+  // [공통] 클릭 이벤트
+  etUI.pages.showSearch = function () {
+    const modalBtn = document.querySelector(".btn-search");
+    const searchArea = document.querySelector(".search-area");
+    const searchModal = document.querySelector(".component-modal.search");
+    const closeBtn = searchModal.querySelector(".modal-close");
+    modalBtn.addEventListener("click", (e) => {
+      searchModal.ui.open();
+
+      searchArea.style.display = "block";
+      e.target.style.display = "none";
+    });
+
+    closeBtn.addEventListener("click", (e) => {
+      searchArea.style.display = "none";
+      modalBtn.style.display = "block";
+    });
+  };
+
+  // [공통] 검색 팝업 - 검색기록 삭제
+  etUI.pages.searchHistoryDelete = function () {
+    const searchModal = document.querySelector(".component-modal.search");
+    const delectBtn = searchModal.querySelector(".search-delete");
+    const historyList = searchModal.querySelectorAll(".history-list .list-item");
+
+    delectBtn.addEventListener("click", (e) => {
+      historyList.forEach((item) => {
+        item.remove();
+      });
+      // delectBtn.style.display = "none";
+    });
+
+  };
+
   document.fonts.ready.then(() => {
     etUI.pages.clickEvent();
     etUI.pages.showMoreBtn();
+    etUI.pages.showSearch();
+    etUI.pages.searchHistoryDelete();
   });
 });
