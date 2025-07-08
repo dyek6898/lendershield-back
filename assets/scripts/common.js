@@ -11,7 +11,7 @@ etUI.utils.ready(function () {
       const target = e.target.closest('.btn-area').querySelector('.alarm-info');
       this.classList.toggle('on');
 
-      if(this.classList.contains('on')){
+      if (this.classList.contains('on')) {
         target.style.display = "block";
       } else target.style.display = "none";
     });
@@ -20,7 +20,7 @@ etUI.utils.ready(function () {
       const target = e.target.closest('.info-area').querySelector('.select-list');
       this.classList.toggle('on');
 
-      if(this.classList.contains('on')){
+      if (this.classList.contains('on')) {
         target.style.display = "block";
       } else target.style.display = "none";
     });
