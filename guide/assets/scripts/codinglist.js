@@ -571,7 +571,8 @@ const projectPathsDev = {
   "pathPagesPrototype": "pages/prototype",
   "pathPagesMain": "pages/main",
   "pathPagesDetail": "pages/detail",
-  "pathPagesLogin": "pages/login"
+  "pathPagesLogin": "pages/login",
+  "pathPagesMypage": "pages/mypage"
 };
 // END OF CODINGLIST PATHS DEV
 
@@ -597,7 +598,8 @@ const projectPathsBuild = {
   "pathPagesPrototype": "pages/prototype",
   "pathPagesMain": "pages/main",
   "pathPagesDetail": "pages/detail",
-  "pathPagesLogin": "pages/login"
+  "pathPagesLogin": "pages/login",
+  "pathPagesMypage": "pages/mypage"
 };
 // END OF CODINGLIST PATHS BUILD
 
