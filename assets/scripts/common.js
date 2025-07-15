@@ -79,22 +79,24 @@ etUI.utils.ready(function () {
 
   // [공통] 클릭 이벤트
   etUI.pages.showSearch = function () {
-    const modalBtn = document.querySelector(".btn-search");
+    const modalBtn = document.querySelectorAll(".btn-search");
     const headerSearchArea = document.querySelector(".header .search-area");
     const searchModal = document.querySelector(".component-modal.search");
     const closeBtn = searchModal.querySelector(".modal-close");
-    modalBtn.addEventListener("click", (e) => {
-      searchModal.ui.open();
+    modalBtn.forEach((btns) => {
+      btns.addEventListener("click", (e) => {
+        searchModal.ui.open();
 
-      headerSearchArea.style.display = "block";
-      e.target.style.display = "none";
-      document.querySelector('.header').style.zIndex = "3500";
-    });
+        headerSearchArea.style.display = "block";
+        e.target.style.display = "none";
+        document.querySelector('.header').style.zIndex = "3500";
+      });
 
-    closeBtn.addEventListener("click", (e) => {
-      headerSearchArea.style.display = "none";
-      modalBtn.style.display = "block";
-      document.querySelector('.header').style.zIndex = "2000";
+      closeBtn.addEventListener("click", (e) => {
+        headerSearchArea.style.display = "none";
+        btns.style.display = "block";
+        document.querySelector('.header').style.zIndex = "2000";
+      });
     });
   };
 
