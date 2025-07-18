@@ -2599,7 +2599,10 @@
             <!-- 기업 정보 -->
             <div class="section corporate-info-section">
               <div class="tit-area">
-                <span class="group-tit">삼성물산</span>
+                <div class="flex-box">
+                  <span class="group-tit">삼성물산</span>
+                  <button class="btn-bookmark"></button>
+                </div>
                 <button class="btn-download">시공사 분석 엑셀 다운로드</button>
               </div>
               <div class="column-group">
@@ -4004,6 +4007,12 @@
 
   <script>
     document.addEventListener("DOMContentLoaded", function() {
+      // 북마크 클릭
+      const bookmarkBtn = document.querySelector(".btn-bookmark");
+      bookmarkBtn.addEventListener("click", function(e) {
+        e.target.classList.toggle("on");
+      });
+
       const modalBtns01 = document.querySelectorAll(".modal-btn01");
 
       modalBtns01.forEach((btn) => {
