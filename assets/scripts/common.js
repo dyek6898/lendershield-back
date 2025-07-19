@@ -115,10 +115,44 @@ etUI.utils.ready(function () {
 
   };
 
+  // [공통] 로딩
+  etUI.pages.loading = function (isDefault = true) {
+    const loadingEl = document.createElement('div');
+    if (isDefault) {
+      loadingEl.classList.add('loading-area');
+    }
+
+    const loadingBar = document.createElement('span');
+    const loadingDimm = document.createElement('div');
+    loadingBar.classList.add('loading-bar');
+    loadingDimm.classList.add('loading-dimm');
+    loadingDimm.style.display = 'block';
+
+    document.querySelector('body').style.overflow = 'hidden';
+
+    loadingEl.appendChild(loadingBar);
+    loadingEl.appendChild(loadingDimm);
+    document.body.appendChild(loadingEl);
+
+
+
+    return loadingEl;
+  };
+
+  etUI.pages.hideLoading = function () {
+    const loadingEl = document.querySelector('.loading-area');
+    if (loadingEl) {
+      loadingEl.parentNode.removeChild(loadingEl);
+      document.querySelector('body').style.overflow = 'auto';
+    }
+  };
+
   document.fonts.ready.then(() => {
     etUI.pages.clickEvent();
     etUI.pages.showMoreBtn();
     etUI.pages.showSearch();
     etUI.pages.searchHistoryDelete();
+    etUI.pages.loading();
+    etUI.pages.hideLoading ();
   });
 });

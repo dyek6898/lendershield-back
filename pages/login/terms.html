@@ -2769,9 +2769,10 @@
   </div>
   <script>
     document.addEventListener("DOMContentLoaded", function() {
-      const modalBtn01 = document.querySelector(".modal-btn01");
-      modalBtn01.addEventListener("click", () => {
-        document.querySelector(".certify").ui.open();
+      document.querySelectorAll(".component-input").forEach(function(inputArea) {
+        inputArea.addEventListener("click", function(e) {
+          e.stopPropagation();
+        });
       });
     });
 
